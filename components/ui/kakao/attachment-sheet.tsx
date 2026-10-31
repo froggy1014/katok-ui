@@ -3,7 +3,8 @@
 import * as React from "react";
 import { cn } from "@/lib/utils";
 import { BottomSheet } from "./bottom-sheet";
-import { CameraIcon, CheckIcon, ChevronRightIcon } from "./icons";
+import { CameraIcon, CheckIcon } from "./icons";
+import { PromoBanner, type PromoBannerProps } from "./promo-banner";
 import "@/components/ui/kakao/styles/kakao.css";
 
 /**
@@ -136,38 +137,12 @@ const AttachmentItem = React.forwardRef<HTMLButtonElement, AttachmentItemProps>(
 );
 AttachmentItem.displayName = "AttachmentItem";
 
-interface AttachmentBannerProps extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, "title"> {
-  title: React.ReactNode;
-  description?: React.ReactNode;
-  /** Illustration on the right. */
-  art?: React.ReactNode;
-}
+type AttachmentBannerProps = Omit<PromoBannerProps, "size" | "chevron">;
 
-/** Gray promo card at the bottom (e.g. "맞춤법, 번역 그리고 챗봇까지!"). */
-const AttachmentBanner = React.forwardRef<HTMLButtonElement, AttachmentBannerProps>(
-  ({ className, title, description, art, type = "button", ...props }, ref) => (
-    <button
-      ref={ref}
-      type={type}
-      className={cn(
-        "mx-[16px] mt-[12px] flex min-h-[60px] w-[calc(100%-32px)] items-center justify-between gap-[12px] rounded-[12px] bg-kk-sheet-fill px-[16px] py-[12px] text-left outline-none focus-visible:ring-2 focus-visible:ring-kk-text-link",
-        className
-      )}
-      {...props}
-    >
-      <span className="flex min-w-0 flex-col gap-[4px]">
-        <span className="text-[16px] font-bold leading-[1.25] text-kk-text-primary">{title}</span>
-        {description && (
-          <span className="flex items-center gap-[2px] text-[15px] leading-[1.25] text-kk-attach-banner-fg">
-            {description}
-            <ChevronRightIcon size={16} strokeWidth={2} />
-          </span>
-        )}
-      </span>
-      {art && <span className="shrink-0">{art}</span>}
-    </button>
-  )
-);
+/** Gray promo card at the bottom (e.g. "맞춤법, 번역 그리고 챗봇까지!"): a small `PromoBanner` with a chevron. */
+const AttachmentBanner = React.forwardRef<HTMLButtonElement, AttachmentBannerProps>(({ className, ...props }, ref) => (
+  <PromoBanner ref={ref} size="sm" chevron className={cn("mt-[12px]", className)} {...props} />
+));
 AttachmentBanner.displayName = "AttachmentBanner";
 
 export {

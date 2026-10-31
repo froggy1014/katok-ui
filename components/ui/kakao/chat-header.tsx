@@ -21,6 +21,8 @@ interface ChatHeaderProps extends Omit<React.HTMLAttributes<HTMLElement>, "title
   onBack?: () => void;
   onSearch?: () => void;
   onMenu?: () => void;
+  /** `main` only: before the title, e.g. your avatar on the friends tab. */
+  leading?: React.ReactNode;
   /** Adds the phone button between search and menu (1:1 and group chats on device). */
   onCall?: () => void;
   /** Replace the default trailing buttons. */
@@ -66,6 +68,7 @@ const ChatHeader = React.forwardRef<HTMLElement, ChatHeaderProps>(
       onSearch,
       onMenu,
       onCall,
+      leading,
       actions,
       ...props
     },
@@ -97,8 +100,11 @@ const ChatHeader = React.forwardRef<HTMLElement, ChatHeaderProps>(
           )}
           {...props}
         >
-          <h1 className="text-[22px] font-bold tracking-[-0.02em]">{title}</h1>
-          <div className="flex items-center gap-[2px]">{trailing}</div>
+          <div className="flex min-w-0 items-center gap-[10px]">
+            {leading}
+            <h1 className="truncate text-[24px] font-bold tracking-[-0.02em]">{title}</h1>
+          </div>
+          <div className="flex shrink-0 items-center gap-[2px]">{trailing}</div>
         </header>
       );
     }
@@ -153,4 +159,4 @@ const ChatHeader = React.forwardRef<HTMLElement, ChatHeaderProps>(
 );
 ChatHeader.displayName = "ChatHeader";
 
-export { ChatHeader, type ChatHeaderProps };
+export { ChatHeader, IconButton as HeaderIconButton, type ChatHeaderProps };

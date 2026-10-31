@@ -119,6 +119,13 @@
   --color-kk-action-button: var(--kk-action-button);
   --color-kk-action-card: var(--kk-action-card);
   --color-kk-map-primary: var(--kk-map-primary);
+  --color-kk-promo-bg: var(--kk-promo-bg);
+  --color-kk-promo-title: var(--kk-promo-title);
+  --color-kk-promo-fg: var(--kk-promo-fg);
+  --color-kk-tab-bg: var(--kk-tab-bg);
+  --color-kk-tab-border: var(--kk-tab-border);
+  --color-kk-tab-icon: var(--kk-tab-icon);
+  --color-kk-tab-icon-active: var(--kk-tab-icon-active);
   --color-kk-attach-camera: var(--kk-attach-camera);
   --color-kk-attach-send-disabled: var(--kk-attach-send-disabled);
   --color-kk-attach-send-disabled-fg: var(--kk-attach-send-disabled-fg);
@@ -260,6 +267,15 @@
   --kk-action-card: rgba(255, 255, 255, 0.72); /* C — glass; reads #CDD3D8 over the dimmed chat */
   --kk-map-primary: #376be7; /* S */
 
+  /* Tabs — kakaocorp.com service screenshots */
+  --kk-promo-bg: #f3f3f3; /* S — chats / friends tab banner (the "+" sheet one reads #F5F5F5) */
+  --kk-promo-title: #333333; /* S */
+  --kk-promo-fg: #5c5c5c; /* S */
+  --kk-tab-bg: #f9f9fa; /* S */
+  --kk-tab-border: #e0e0e0; /* S */
+  --kk-tab-icon: #b9bcbf; /* S */
+  --kk-tab-icon-active: #2f363e; /* S */
+
   /* Attachment sheet ("+" in the input) — device screenshot */
   --kk-attach-camera: #949494; /* S */
   --kk-attach-send-disabled: #eff0ef; /* S */
@@ -395,6 +411,13 @@
   --kk-capture-dim: rgba(0, 0, 0, 0.55); /* C */
   --kk-action-button: rgba(255, 255, 255, 0.14); /* C */
   --kk-action-card: rgba(44, 44, 46, 0.72); /* C */
+  --kk-promo-bg: #2c2c2e; /* C */
+  --kk-promo-title: #ededed; /* C */
+  --kk-promo-fg: #a1a1a6; /* C */
+  --kk-tab-bg: #161618; /* C */
+  --kk-tab-border: rgba(255, 255, 255, 0.08); /* C */
+  --kk-tab-icon: #5c5c60; /* C */
+  --kk-tab-icon-active: #ededed; /* C */
   --kk-attach-camera: #48484a; /* C */
   --kk-attach-send-disabled: #2c2c2e; /* C */
   --kk-attach-send-disabled-fg: #8e8e93; /* C */

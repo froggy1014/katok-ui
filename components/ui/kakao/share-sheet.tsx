@@ -3,12 +3,10 @@
 import * as React from "react";
 import { cn } from "@/lib/utils";
 import { BottomSheet, SheetSearch } from "./bottom-sheet";
+import { FilterChips, type FilterChip } from "./filter-chips";
 import "@/components/ui/kakao/styles/kakao.css";
 
-interface ShareSheetFilter {
-  value: string;
-  label: string;
-}
+type ShareSheetFilter = FilterChip;
 
 interface ShareSheetProps extends React.HTMLAttributes<HTMLDivElement> {
   /** Search field value. Omit for an uncontrolled field. */
@@ -51,8 +49,6 @@ const ShareSheet = React.forwardRef<HTMLDivElement, ShareSheetProps>(
     },
     ref
   ) => {
-    const [innerFilter, setInnerFilter] = React.useState(defaultFilter ?? filters?.[0]?.value);
-    const active = filter !== undefined ? filter : innerFilter;
 
     return (
       <BottomSheet ref={ref} className={className} {...props}>
@@ -64,28 +60,15 @@ const ShareSheet = React.forwardRef<HTMLDivElement, ShareSheetProps>(
         />
 
         {filters && filters.length > 0 && (
-          <div role="group" aria-label="필터" className="mt-[16px] flex shrink-0 gap-[7px] overflow-x-auto px-[16px]">
-            {filters.map((f) => {
-              const on = f.value === active;
-              return (
-                <button
-                  key={f.value}
-                  type="button"
-                  aria-pressed={on}
-                  onClick={() => {
-                    if (filter === undefined) setInnerFilter(f.value);
-                    onFilterChange?.(f.value);
-                  }}
-                  className={cn(
-                    "h-[36px] shrink-0 rounded-full px-[12px] text-[14px] leading-none outline-none transition-colors focus-visible:ring-2 focus-visible:ring-kk-text-link",
-                    on ? "bg-kk-chip-selected text-kk-chip-selected-fg" : "border border-kk-chip-border text-kk-chip-fg"
-                  )}
-                >
-                  {f.label}
-                </button>
-              );
-            })}
-          </div>
+          <FilterChips
+            aria-label="필터"
+            size="sm"
+            className="mt-[16px]"
+            items={filters}
+            value={filter}
+            defaultValue={defaultFilter}
+            onValueChange={onFilterChange}
+          />
         )}
 
         {/* Rows sit 76pt apart here, taller than the Chats tab. */}

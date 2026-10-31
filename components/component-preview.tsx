@@ -12,6 +12,10 @@ import { ProfileAvatar } from "@/components/ui/kakao/profile-avatar";
 import { AttachmentGroup, AttachmentItem, AttachmentPhotos, AttachmentSheet } from "@/components/ui/kakao/attachment-sheet";
 import { ActionSheet } from "@/components/ui/kakao/action-sheet";
 import { BottomSheet, SheetSearch } from "@/components/ui/kakao/bottom-sheet";
+import { FilterChips } from "@/components/ui/kakao/filter-chips";
+import { FriendListItem, RowButton, UpdatedFriends } from "@/components/ui/kakao/friend-list";
+import { PromoBanner } from "@/components/ui/kakao/promo-banner";
+import { TabBar } from "@/components/ui/kakao/tab-bar";
 import { BotActionCard } from "@/components/ui/kakao/bot-message";
 import { MediaBubble } from "@/components/ui/kakao/media-bubble";
 import { withMentions } from "@/components/ui/kakao/mention";
@@ -190,6 +194,46 @@ const PREVIEWS: Record<string, () => React.ReactNode> = {
       <LocationPicker address="서울 서초구 서초동 1739-1" distance="0m">
         <div className="h-full bg-[url(/samples/map.svg)] bg-cover bg-center" />
       </LocationPicker>
+    </div>
+  ),
+  "tab-bar": () => (
+    <div className="-mx-4 -mb-4 pt-6">
+      <TabBar activeId="chats" items={[
+        { id: "friends", label: "친구", icon: "friends" },
+        { id: "chats", label: "채팅", icon: "chats", badge: 18 },
+        { id: "now", label: "지금", icon: "now" },
+        { id: "shopping", label: "쇼핑", icon: "shopping" },
+        { id: "more", label: "더보기", icon: "more" },
+      ]} />
+    </div>
+  ),
+  "filter-chips": () => (
+    <div className="-mx-4 bg-kk-list-bg py-3">
+      <FilterChips
+        items={[
+          { value: "all", label: "전체" },
+          { value: "unread", label: "안읽음", count: 18 },
+          { value: "friends", label: "친구", count: 6 },
+        ]}
+        defaultValue="unread"
+      />
+    </div>
+  ),
+  "promo-banner": () => (
+    <div className="-mx-4 bg-kk-list-bg py-3">
+      <PromoBanner title="이번 주 새 기능이 궁금하다면?" description="업데이트 소식 보기" />
+    </div>
+  ),
+  "friend-list": () => (
+    <div className="-mx-4 bg-kk-list-bg">
+      <UpdatedFriends
+        friends={[
+          { id: "1", name: "김민지", avatar: MINJI.avatar, isNew: true },
+          { id: "2", name: "이준호", avatar: S("avatar-junho"), isNew: true },
+          { id: "3", name: "미리마켓", avatar: SHOP.avatar, ad: true },
+        ]}
+      />
+      <FriendListItem name="최도현" avatar={S("avatar-dohyun")} description="오늘" badge="🎂" action={<RowButton>선물하기</RowButton>} />
     </div>
   ),
   "share-sheet": () => (

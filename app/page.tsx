@@ -37,6 +37,7 @@ const CATEGORY_ORDER = [
       "chat-room",
     ],
   },
+  { label: "Tabs & Lists", names: ["tab-bar", "filter-chips", "promo-banner", "friend-list"] },
   { label: "Biz Message", names: ["alimtalk-bubble", "brand-message-bubble", "biz-button"] },
 ];
 
