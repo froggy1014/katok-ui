@@ -146,6 +146,20 @@ export const CrosshairIcon = strokeIcon(
     <path d="M12 2v3M12 19v3M2 12h3M19 12h3" />
   </>
 );
+export const UserPlusIcon = strokeIcon(
+  "UserPlusIcon",
+  <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M9 3a4 4 0 1 1 0 8 4 4 0 0 1 0-8ZM19 8v6M22 11h-6" />
+);
+/** New chat: speech bubble with a plus (original drawing). */
+export const ChatPlusIcon = strokeIcon(
+  "ChatPlusIcon",
+  <path d="M20.5 11.5A8.5 7.5 0 1 1 12 4M7.4 18.4 5 21l.4-3.4M19 2v6M16 5h6" />
+);
+/** Gift box with a heart bow (original drawing). */
+export const GiftBoxIcon = strokeIcon(
+  "GiftBoxIcon",
+  <path d="M4 10h16v9a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zM3 7.5h18V10H3zM12 7.5V21M12 7.5c-1.6-2.8-5-3.4-5-1.2 0 1.4 2.4 1.2 5 1.2Zm0 0c1.6-2.8 5-3.4 5-1.2 0 1.4-2.4 1.2-5 1.2Z" />
+);
 export const CopyIcon = strokeIcon(
   "CopyIcon",
   <>

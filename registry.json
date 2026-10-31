@@ -81,7 +81,7 @@
       "name": "chat-header",
       "type": "registry:component",
       "title": "Chat Header",
-      "description": "Chat room header (back + unread total, title, member count, search, menu) and large-title tab header; optional phone button (`onCall`).",
+      "description": "Chat room header (back + unread total, title, member count, search, menu) and large-title tab header; optional phone button (`onCall`); `leading` avatar on the large-title tab header; `HeaderIconButton` for custom actions.",
       "registryDependencies": [
         "utils",
         "https://katok-ui.jeongmin.dev/r/kakao-core.json"
@@ -189,7 +189,8 @@
         "utils",
         "https://katok-ui.jeongmin.dev/r/kakao-core.json",
         "https://katok-ui.jeongmin.dev/r/bottom-sheet.json",
-        "https://katok-ui.jeongmin.dev/r/chat-list-item.json"
+        "https://katok-ui.jeongmin.dev/r/chat-list-item.json",
+        "https://katok-ui.jeongmin.dev/r/filter-chips.json"
       ],
       "files": [
         {
@@ -319,7 +320,8 @@
       "registryDependencies": [
         "utils",
         "https://katok-ui.jeongmin.dev/r/kakao-core.json",
-        "https://katok-ui.jeongmin.dev/r/bottom-sheet.json"
+        "https://katok-ui.jeongmin.dev/r/bottom-sheet.json",
+        "https://katok-ui.jeongmin.dev/r/promo-banner.json"
       ],
       "files": [
         {
@@ -428,6 +430,75 @@
           "path": "components/ui/kakao/location-picker.tsx",
           "type": "registry:component",
           "target": "components/ui/kakao/location-picker.tsx"
+        }
+      ]
+    },
+    {
+      "name": "tab-bar",
+      "type": "registry:component",
+      "title": "Tab Bar",
+      "description": "Five-tab bar (친구 · 채팅 · 지금 · 쇼핑 · 더보기) with filled glyphs and the red unread badge.",
+      "registryDependencies": [
+        "utils",
+        "https://katok-ui.jeongmin.dev/r/kakao-core.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/kakao/tab-bar.tsx",
+          "type": "registry:component",
+          "target": "components/ui/kakao/tab-bar.tsx"
+        }
+      ]
+    },
+    {
+      "name": "filter-chips",
+      "type": "registry:component",
+      "title": "Filter Chips",
+      "description": "Pill filters, black when active, with an orange count: chats-tab folders, 친구 / 소식, sheet filters.",
+      "registryDependencies": [
+        "utils",
+        "https://katok-ui.jeongmin.dev/r/kakao-core.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/kakao/filter-chips.tsx",
+          "type": "registry:component",
+          "target": "components/ui/kakao/filter-chips.tsx"
+        }
+      ]
+    },
+    {
+      "name": "promo-banner",
+      "type": "registry:component",
+      "title": "Promo Banner",
+      "description": "Gray promo card with bold title, gray line and art; 88pt on the tabs, 60pt in sheets.",
+      "registryDependencies": [
+        "utils",
+        "https://katok-ui.jeongmin.dev/r/kakao-core.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/kakao/promo-banner.tsx",
+          "type": "registry:component",
+          "target": "components/ui/kakao/promo-banner.tsx"
+        }
+      ]
+    },
+    {
+      "name": "friend-list",
+      "type": "registry:component",
+      "title": "Friend List",
+      "description": "Friends-tab parts: section label with count and sort, updated-friends strip (new dot, AD), friend rows with an action or count.",
+      "registryDependencies": [
+        "utils",
+        "https://katok-ui.jeongmin.dev/r/kakao-core.json",
+        "https://katok-ui.jeongmin.dev/r/profile-avatar.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/kakao/friend-list.tsx",
+          "type": "registry:component",
+          "target": "components/ui/kakao/friend-list.tsx"
         }
       ]
     },

@@ -100,6 +100,18 @@ Measured from an iOS 26 device screenshot (**S**). Icons in the stories are stan
 | Group divider | full-width `#DBDBDB` |
 | Banner | `--kk-sheet-fill`, 12pt radius, 16px bold title, `#5C5C5C` 15px link with chevron |
 
+### Tabs
+From kakaocorp.com service screenshots (**S**, 842px = 402pt).
+
+| Part | Value |
+|---|---|
+| Tab bar | `#F9F9FA`, `#E0E0E0` top line; icons `#B9BCBF`, active `#2F363E`; 56pt + safe area |
+| Large title | 24px bold; friends tab puts a 36pt avatar before it |
+| Folder chips | 42pt, 17px semibold, 18pt sides, 8pt apart; count badge `#F4551E` 17pt tall |
+| Promo card | `#F3F3F3`, 13pt radius, 88pt tall, 18px bold `#333` title, `#5C5C5C` line |
+| Updated friends | 54pt squircles 70pt apart, `#F4551E` new dot, white "AD" tag |
+| Friend rows | 46pt avatar, 17px name, 14px gray line; 선물하기 pill 36pt with `#E4E4E4` border |
+
 ### Rich messages
 From kakaocorp.com screenshots (**S**).
 

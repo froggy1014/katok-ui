@@ -52,6 +52,10 @@ Each component is independent — it brings the files it needs (tokens, icons, s
 | `location-picker` | 지도 → 이 위치 보내기 chrome over your own map |
 | `reaction-picker` | Reaction search + sectioned 6-column emoji grid |
 | `share-sheet` | Share bottom sheet: grabber, search, filter chips, picker rows, quick-share targets |
+| `tab-bar` | Five-tab bar with filled glyphs and the unread badge |
+| `filter-chips` | Pill filters with orange counts (chats-tab folders, 친구 / 소식, sheet filters) |
+| `promo-banner` | Gray promo card at the top of the tabs and in sheets |
+| `friend-list` | Friends-tab section labels, updated-friends strip, friend rows (선물하기, counts) |
 | `chat-room` | Layout shell: header, message log, input, custom theme background |
 | `alimtalk-bubble` | `messageType` BA/EX/AD/MI × `emphasizeType` NONE/TEXT/IMAGE/ITEM_LIST, buttons, quick replies — matched against the Kakao Business guide |
 | `brand-message-bubble` | `chatBubbleType` TEXT/IMAGE/WIDE/CAROUSEL_FEED, ticket coupons, opt-out line; `adSenderName()` for the "(광고)" sender label |
