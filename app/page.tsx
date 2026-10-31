@@ -19,6 +19,7 @@ const CATEGORY_ORDER = [
       "date-separator",
       "system-message",
       "chat-list-item",
+      "share-sheet",
       "chat-room",
     ],
   },

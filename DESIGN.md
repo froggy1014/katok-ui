@@ -70,6 +70,23 @@ Pill 48pt tall, 10pt from the screen edges; round buttons 32pt, emoji button 24p
 | `--kk-divider` | `rgba(0,0,0,.09)` | T |
 | `--kk-list-description` / `-meta` | `#767676` | S |
 | `--kk-badge` | `#F4551E` | S |
+| `--kk-open-chat` | `#424242` disc, 17pt, before the name | S |
+| `--kk-check-border` | `#949494` ring, 22pt, 1.5pt stroke | S |
+| `--kk-check-selected` | `#FEE500` fill + dark check | C |
+
+### Share sheet
+Measured from an iOS 26 device screenshot (**S**, 402pt wide @3x). Dark values are **C**.
+
+| Token / part | Value |
+|---|---|
+| `--kk-sheet-scrim` | `rgba(0,0,0,.5)` — `#ABC1D1` dims to `#576067` |
+| `--kk-radius-sheet` | `44px` top corners |
+| `--kk-sheet-grabber` | `#949494`, 36×5pt, 8pt from the top |
+| `--kk-sheet-fill` | `#F5F5F5` — search field (43pt, 8pt radius, 16pt gutter) and 52pt quick-share circles |
+| `--kk-sheet-placeholder` | `#888888`, 15px |
+| Chips | 36pt pill, 14px, 12pt side padding; `#191919` filled when active, `#DBDBDB` 1px ring otherwise |
+| Picker rows | 76pt pitch (14pt vertical padding around the 48pt avatar) |
+| Quick-share row | `--kk-divider` top border, 66pt columns, `#424242` 14px captions |
 
 ### Biz Message
 Measured from the Kakao Business content guides (**S**), which render the card 510px wide = 268pt.

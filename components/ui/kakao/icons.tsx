@@ -85,6 +85,37 @@ export const SettingsIcon = strokeIcon(
   </>
 );
 
+export const CheckIcon = strokeIcon("CheckIcon", <path d="M20 6 9 17l-5-5" />);
+export const MoreHorizontalIcon = strokeIcon(
+  "MoreHorizontalIcon",
+  <>
+    <circle cx="12" cy="12" r="1" />
+    <circle cx="19" cy="12" r="1" />
+    <circle cx="5" cy="12" r="1" />
+  </>
+);
+
+/** Open chat room mark: a filled disc with a knocked-out speech bubble (original drawing). */
+export function OpenChatIcon({ size = 16, ...props }: IconProps) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      aria-hidden={props["aria-label"] ? undefined : true}
+      role={props["aria-label"] ? "img" : undefined}
+      {...props}
+    >
+      <path
+        fillRule="evenodd"
+        d="M12 1a11 11 0 1 0 0 22 11 11 0 0 0 0-22Zm0 5.2c-3.3 0-5.9 2.2-5.9 4.9 0 1.6.9 3 2.4 3.9l-.5 2.4 2.6-1.7c.5.1.9.1 1.4.1 3.3 0 5.9-2.2 5.9-4.9S15.3 6.2 12 6.2Z"
+      />
+    </svg>
+  );
+}
+
 /** Default profile silhouette (filled, original drawing). */
 export function SilhouetteIcon({ size = 24, ...props }: IconProps) {
   return (

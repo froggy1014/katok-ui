@@ -35,7 +35,8 @@ Each component is independent — it brings the files it needs (tokens, icons, s
 | `message-input` | Floating pill: round `+`, auto-grow, emoji, `#` that turns into the yellow send button; IME-safe Enter |
 | `date-separator` | Date pill + `formatKakaoDate()` |
 | `system-message` | Join / leave / invite / deleted notices |
-| `chat-list-item` | Chats tab row: unread badge, mute, pin, member count, `render` polymorphism |
+| `chat-list-item` | Chats tab row: unread badge, mute, pin, member count, open chat mark, `render` polymorphism; `selected` makes it a picker row |
+| `share-sheet` | Share bottom sheet: grabber, search, filter chips, picker rows, quick-share targets |
 | `chat-room` | Layout shell: header, message log, input, custom theme background |
 | `alimtalk-bubble` | `messageType` BA/EX/AD/MI × `emphasizeType` NONE/TEXT/IMAGE/ITEM_LIST, buttons, quick replies — matched against the Kakao Business guide |
 | `brand-message-bubble` | `chatBubbleType` TEXT/IMAGE/WIDE/CAROUSEL_FEED, ticket coupons, opt-out line; `adSenderName()` for the "(광고)" sender label |

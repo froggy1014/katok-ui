@@ -78,6 +78,22 @@
   --color-kk-badge: var(--kk-badge);
   --color-kk-badge-fg: var(--kk-badge-fg);
   --color-kk-divider: var(--kk-divider);
+  --color-kk-open-chat: var(--kk-open-chat);
+  --color-kk-check-border: var(--kk-check-border);
+  --color-kk-check-selected: var(--kk-check-selected);
+  --color-kk-check-selected-fg: var(--kk-check-selected-fg);
+
+  /* === Share sheet === */
+  --color-kk-sheet-bg: var(--kk-sheet-bg);
+  --color-kk-sheet-scrim: var(--kk-sheet-scrim);
+  --color-kk-sheet-grabber: var(--kk-sheet-grabber);
+  --color-kk-sheet-fill: var(--kk-sheet-fill);
+  --color-kk-sheet-placeholder: var(--kk-sheet-placeholder);
+  --color-kk-sheet-label: var(--kk-sheet-label);
+  --color-kk-chip-border: var(--kk-chip-border);
+  --color-kk-chip-fg: var(--kk-chip-fg);
+  --color-kk-chip-selected: var(--kk-chip-selected);
+  --color-kk-chip-selected-fg: var(--kk-chip-selected-fg);
 
   /* === Biz Message === */
   --color-kk-biz-band: var(--kk-biz-band);
@@ -167,6 +183,22 @@
   --kk-badge: #f4551e; /* S */
   --kk-badge-fg: #ffffff;
   --kk-divider: rgba(0, 0, 0, 0.09); /* T */
+  --kk-open-chat: #424242; /* S — device share sheet */
+  --kk-check-border: #949494; /* S */
+  --kk-check-selected: #fee500; /* C */
+  --kk-check-selected-fg: #191919; /* C */
+
+  /* Share sheet — measured on device (iOS 26, share sheet) */
+  --kk-sheet-bg: #ffffff; /* S */
+  --kk-sheet-scrim: rgba(0, 0, 0, 0.5); /* S — #abc1d1 dims to #576067 */
+  --kk-sheet-grabber: #949494; /* S */
+  --kk-sheet-fill: #f5f5f5; /* S — search field + quick-share circles */
+  --kk-sheet-placeholder: #888888; /* S */
+  --kk-sheet-label: #424242; /* S */
+  --kk-chip-border: #dbdbdb; /* S */
+  --kk-chip-fg: #191919; /* S */
+  --kk-chip-selected: #191919; /* S */
+  --kk-chip-selected-fg: #ffffff; /* S */
 
   /* Biz Message */
   --kk-biz-band: #fee500; /* S — "알림톡 도착" band */
@@ -208,6 +240,7 @@
   --kk-gap-grouped: 4px; /* C */
   --kk-gap-meta: 4px; /* D */
   --kk-gap-group: 12px;
+  --kk-radius-sheet: 44px; /* S — concentric with the iPhone corner */
 }
 
 .dark,
@@ -261,6 +294,19 @@
   --kk-list-meta: #7c7c80;
   --kk-list-pressed: rgba(255, 255, 255, 0.06);
   --kk-divider: rgba(255, 255, 255, 0.1);
+  --kk-open-chat: #c7c7cc; /* C */
+  --kk-check-border: #636366; /* C */
+
+  --kk-sheet-bg: #1c1c1e; /* C */
+  --kk-sheet-scrim: rgba(0, 0, 0, 0.6); /* C */
+  --kk-sheet-grabber: #5c5c60; /* C */
+  --kk-sheet-fill: #2c2c2e; /* C */
+  --kk-sheet-placeholder: #8e8e93; /* C */
+  --kk-sheet-label: #c7c7cc; /* C */
+  --kk-chip-border: rgba(255, 255, 255, 0.18); /* C */
+  --kk-chip-fg: #ededed; /* C */
+  --kk-chip-selected: #f2f2f2; /* C */
+  --kk-chip-selected-fg: #191919; /* C */
 
   --kk-biz-surface: #2c2c2e;
   --kk-biz-button-bg: #3a3a3c;

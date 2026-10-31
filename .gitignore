@@ -53,3 +53,6 @@ storybook-static
 
 # Kakao reference imagery (pnpm refs:fetch) — never commit or deploy
 /public/reference/
+
+# shadcn build output (served by app/r)
+/public/r/

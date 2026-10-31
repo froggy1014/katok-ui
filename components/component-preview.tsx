@@ -9,6 +9,7 @@ import { DateSeparator } from "@/components/ui/kakao/date-separator";
 import { MessageGroup } from "@/components/ui/kakao/message-group";
 import { MessageInput } from "@/components/ui/kakao/message-input";
 import { ProfileAvatar } from "@/components/ui/kakao/profile-avatar";
+import { ShareSheet } from "@/components/ui/kakao/share-sheet";
 import { SystemMessage } from "@/components/ui/kakao/system-message";
 
 const S = (n: string) => `/samples/${n}.svg`;
@@ -52,6 +53,21 @@ const PREVIEWS: Record<string, () => React.ReactNode> = {
   "chat-list-item": () => (
     <div className="-mx-4">
       <ChatListItem name="김민지" avatar={MINJI.avatar} lastMessage="내일 몇 시에 볼까?" timestamp="오후 2:14" unreadCount={2} />
+    </div>
+  ),
+  "share-sheet": () => (
+    <div className="-mx-4 -mb-4 h-[260px] bg-kk-sheet-scrim pt-4">
+      <ShareSheet
+        className="h-full"
+        filters={[
+          { value: "all", label: "전체" },
+          { value: "friends", label: "친구" },
+          { value: "recent", label: "최근 공유" },
+        ]}
+      >
+        <ChatListItem name="주말 러닝 크루" openChat memberCount={81} lastMessage="리얼 짱춥" selected />
+        <ChatListItem name="김민지" avatar={MINJI.avatar} lastMessage="내일 몇 시에 볼까?" selected={false} />
+      </ShareSheet>
     </div>
   ),
   "chat-room": () => (
