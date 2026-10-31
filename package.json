@@ -63,6 +63,7 @@
     "eslint-config-next": "16.2.5",
     "eslint-plugin-storybook": "^10.3.6",
     "playwright": "^1",
+    "remark-gfm": "^4.0.1",
     "storybook": "^10.3.6",
     "tailwindcss": "^4",
     "typescript": "^5",

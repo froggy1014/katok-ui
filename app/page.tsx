@@ -24,6 +24,7 @@ const CATEGORY_ORDER = [
       "bottom-sheet",
       "share-sheet",
       "reaction-picker",
+      "attachment-sheet",
       "chat-room",
     ],
   },
