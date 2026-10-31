@@ -12,6 +12,10 @@ import { ProfileAvatar } from "@/components/ui/kakao/profile-avatar";
 import { AttachmentGroup, AttachmentItem, AttachmentPhotos, AttachmentSheet } from "@/components/ui/kakao/attachment-sheet";
 import { ActionSheet } from "@/components/ui/kakao/action-sheet";
 import { BottomSheet, SheetSearch } from "@/components/ui/kakao/bottom-sheet";
+import { BotActionCard } from "@/components/ui/kakao/bot-message";
+import { MediaBubble } from "@/components/ui/kakao/media-bubble";
+import { MentionPopover, withMentions } from "@/components/ui/kakao/mention";
+import { StickerMessage } from "@/components/ui/kakao/sticker-message";
 import { CaptureSelection } from "@/components/ui/kakao/capture-mode";
 import { LocationPicker } from "@/components/ui/kakao/location-picker";
 import { NoticeBanner } from "@/components/ui/kakao/notice-banner";
@@ -72,6 +76,35 @@ const PREVIEWS: Record<string, () => React.ReactNode> = {
         <SheetSearch placeholder="검색" />
       </BottomSheet>
     </div>
+  ),
+  mention: () => (
+    <div className="flex flex-col gap-2">
+      <MessageGroup variant="outgoing" timestamp="오전 10:13">
+        <ChatBubble>{withMentions("@김민지 시안 확인 부탁해요", ["김민지"])}</ChatBubble>
+      </MessageGroup>
+      <MentionPopover
+        candidates={[
+          { id: "me", name: "김민지", avatar: MINJI.avatar, me: true },
+          { id: "junho", name: "이준호", avatar: S("avatar-junho") },
+        ]}
+        activeId="junho"
+      />
+    </div>
+  ),
+  "sticker-message": () => (
+    <MessageGroup variant="outgoing" timestamp="오전 10:13">
+      <StickerMessage src={S("sticker-cheer")} size={110} />
+    </MessageGroup>
+  ),
+  "media-bubble": () => (
+    <MessageGroup variant="outgoing" timestamp="오후 6:40">
+      <MediaBubble src="/samples/poster-kite.jpg" title="노을 질 때 날린 연" video width={150} height={200} />
+    </MessageGroup>
+  ),
+  "bot-message": () => (
+    <MessageGroup sender={{ name: "도우미 봇" }} timestamp="오후 2:03">
+      <BotActionCard text="답변 내용을 더 확인해 보세요." buttonLabel="자세히 보기" />
+    </MessageGroup>
   ),
   "message-reactions": () => (
     <MessageGroup sender={MINJI} timestamp="오전 10:03">

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 300 300">
+  <!-- Original sticker for stories: a round mochi cheering with a pennant. -->
+  <ellipse cx="150" cy="270" rx="80" ry="12" fill="#000" opacity=".08"/>
+  <path d="M60 190c0-60 40-105 90-105s90 45 90 105c0 45-40 72-90 72s-90-27-90-72Z" fill="#fff" stroke="#3a3a3a" stroke-width="6"/>
+  <circle cx="118" cy="170" r="9" fill="#3a3a3a"/><circle cx="182" cy="170" r="9" fill="#3a3a3a"/>
+  <path d="M132 196q18 18 36 0" fill="none" stroke="#3a3a3a" stroke-width="6" stroke-linecap="round"/>
+  <ellipse cx="100" cy="196" rx="14" ry="8" fill="#ffb3b3"/><ellipse cx="200" cy="196" rx="14" ry="8" fill="#ffb3b3"/>
+  <path d="M230 150 260 60" stroke="#3a3a3a" stroke-width="6" stroke-linecap="round"/>
+  <path d="M258 64 210 50 246 96Z" fill="#7cc4ff" stroke="#3a3a3a" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M40 90l10 6M44 70l14-2M250 200l18 4" stroke="#ffcf3f" stroke-width="6" stroke-linecap="round"/>
+</svg>
