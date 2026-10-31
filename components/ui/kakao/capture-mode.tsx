@@ -7,7 +7,7 @@ import "@/components/ui/kakao/styles/kakao.css";
  * 캡처 mode, in three parts that slot into <ChatRoom>:
  *   header={<CaptureHeader />}  — replaces the chat header
  *   <CaptureSelection>…</CaptureSelection> — wraps the picked messages in the log
- *   input={<CaptureToolbar />}  — replaces the input bar
+ *   input={<CaptureToolbar />} floatingInput — floats over the log, above the dim
  */
 
 interface CaptureHeaderProps extends React.HTMLAttributes<HTMLElement> {
@@ -87,8 +87,7 @@ const CaptureToolbar = React.forwardRef<HTMLDivElement, CaptureToolbarProps>(
   ({ className, onOptions, onSave, onShare, ...props }, ref) => (
     <div
       ref={ref}
-      // Sits where the input bar was, so it carries the same dim as the log above.
-      className={cn("font-kk bg-kk-capture-dim px-[10px] pb-[calc(8px+env(safe-area-inset-bottom))] pt-[6px]", className)}
+      className={cn("font-kk px-[10px] pb-[calc(8px+env(safe-area-inset-bottom))] pt-[6px]", className)}
       {...props}
     >
       <div className="kk-glass flex h-[48px] items-center justify-between rounded-full pl-[16px] pr-[6px] text-kk-chat-header-fg">

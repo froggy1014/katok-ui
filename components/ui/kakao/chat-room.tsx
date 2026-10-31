@@ -11,6 +11,11 @@ interface ChatRoomProps extends React.HTMLAttributes<HTMLDivElement> {
   notice?: React.ReactNode;
   /** Usually a `<MessageInput />`. */
   input?: React.ReactNode;
+  /**
+   * Float `input` over the messages instead of below them, so it stays on top
+   * of everything in the log (e.g. `<CaptureToolbar>` over a dimmed chat).
+   */
+  floatingInput?: boolean;
   /** Override the chat background (color or image), e.g. a custom theme. */
   background?: string;
   /**
@@ -31,7 +36,7 @@ const STICK_THRESHOLD = 48;
  * under its glass pills) and the input pill sits on the chat background.
  */
 const ChatRoom = React.forwardRef<HTMLDivElement, ChatRoomProps>(
-  ({ className, header, notice, input, background, stickToBottom = true, children, style, ...props }, ref) => {
+  ({ className, header, notice, input, floatingInput = false, background, stickToBottom = true, children, style, ...props }, ref) => {
     const logRef = React.useRef<HTMLDivElement>(null);
     const contentRef = React.useRef<HTMLDivElement>(null);
     const pinned = React.useRef(true);
@@ -60,7 +65,8 @@ const ChatRoom = React.forwardRef<HTMLDivElement, ChatRoomProps>(
     return (
       <div
         ref={ref}
-        className={cn("font-kk relative flex h-full w-full flex-col overflow-hidden bg-kk-chat-bg", className)}
+        // `isolate` keeps the header/notice z-index inside the room, so a sheet's scrim drawn over it dims them too.
+        className={cn("font-kk relative isolate flex h-full w-full flex-col overflow-hidden bg-kk-chat-bg", className)}
         style={{ ...(background ? { background } : null), ...style }}
         {...props}
       >
@@ -81,14 +87,17 @@ const ChatRoom = React.forwardRef<HTMLDivElement, ChatRoomProps>(
           aria-live="polite"
           className={cn(
             "min-h-0 flex-1 overflow-y-auto px-[10px] pb-[8px] [scrollbar-width:none]",
-            header ? "pt-[calc(var(--kk-header-height)+4px)]" : "pt-[4px]"
+            header ? "pt-[calc(var(--kk-header-height)+4px)]" : "pt-[4px]",
+            input && floatingInput && "pb-[72px]"
           )}
         >
           <div ref={contentRef} className="flex flex-col gap-[var(--kk-gap-group)]">
             {children}
           </div>
         </div>
-        {input && <div className="shrink-0">{input}</div>}
+        {input && (
+          <div className={floatingInput ? "absolute inset-x-0 bottom-0 z-10" : "relative z-10 shrink-0"}>{input}</div>
+        )}
       </div>
     );
   }
