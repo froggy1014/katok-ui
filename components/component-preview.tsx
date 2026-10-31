@@ -85,7 +85,7 @@ const PREVIEWS: Record<string, () => React.ReactNode> = {
           />
         }
       >
-        생일 축하해
+        승진 축하해!
       </ChatBubble>
     </MessageGroup>
   ),
@@ -136,12 +136,12 @@ const PREVIEWS: Record<string, () => React.ReactNode> = {
       <VoiceRecorder state="recording" elapsed={2} />
     </div>
   ),
-  "notice-banner": () => <NoticeBanner title="요나고 2박3일 · 7월 23–25" more />,
+  "notice-banner": () => <NoticeBanner title="11월 정모 · 15일(토) 오후 2시 · 합정" more />,
   "capture-mode": () => (
     <div className="-mx-4 -my-4 overflow-hidden px-4 py-6">
       <CaptureSelection>
         <MessageGroup variant="outgoing" timestamp="오후 8:58">
-          <ChatBubble>각자 집에 갔냐는 거였음</ChatBubble>
+          <ChatBubble>규칙 설명은 내가 할게</ChatBubble>
         </MessageGroup>
       </CaptureSelection>
     </div>
@@ -168,7 +168,7 @@ const PREVIEWS: Record<string, () => React.ReactNode> = {
           { value: "recent", label: "최근 공유" },
         ]}
       >
-        <ChatListItem name="주말 러닝 크루" openChat memberCount={81} lastMessage="리얼 짱춥" selected />
+        <ChatListItem name="동네 산책 모임" openChat memberCount={32} lastMessage="내일은 비 온대요" selected />
         <ChatListItem name="김민지" avatar={MINJI.avatar} lastMessage="내일 몇 시에 볼까?" selected={false} />
       </ShareSheet>
     </div>

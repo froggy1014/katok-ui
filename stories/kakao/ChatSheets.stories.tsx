@@ -23,16 +23,16 @@ function Backdrop({ sheet, top = "55%" }: { sheet: React.ReactNode; top?: string
   return (
     <div className="relative h-full">
       <ChatRoom
-        header={<ChatHeader title="가족" unreadTotal={51} onCall={() => {}} />}
-        notice={<NoticeBanner title="요나고 2박3일 · 7월 23–25" more onClose={() => {}} />}
+        header={<ChatHeader title="보드게임 모임" memberCount={6} unreadTotal={7} onCall={() => {}} />}
+        notice={<NoticeBanner title="11월 정모 · 15일(토) 오후 2시 · 합정" more onClose={() => {}} />}
       >
         <MessageGroup sender={PEOPLE.haeun} timestamp="오후 8:57">
-          <ChatBubble>ㅋㅋ</ChatBubble>
-          <ChatBubble>ㄴ 안헤어짐 ㅅㄱ..</ChatBubble>
+          <ChatBubble>이번엔 신작 들고 갈게</ChatBubble>
+          <ChatBubble>룰북 미리 읽어 올 사람?</ChatBubble>
         </MessageGroup>
         <MessageGroup variant="outgoing" timestamp="오후 8:58">
-          <ChatBubble>아니</ChatBubble>
-          <ChatBubble>각자 집에 갔냐는 거였음</ChatBubble>
+          <ChatBubble>나 읽어 갈게</ChatBubble>
+          <ChatBubble>요약해서 여기 올릴게요</ChatBubble>
         </MessageGroup>
       </ChatRoom>
       <div className="absolute inset-0 bg-kk-sheet-scrim" />

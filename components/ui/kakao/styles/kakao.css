@@ -185,6 +185,7 @@
   --kk-chat-pill-fg: #ffffff; /* C */
   --kk-glass-bg: rgba(255, 255, 255, 0.22); /* S — #bdcedb over #abc1d1 */
   --kk-glass-border: rgba(255, 255, 255, 0.55); /* S */
+  --kk-glass-strong-bg: rgba(255, 255, 255, 0.58); /* S — capture toolbar #C0C5C9 over the #68727B dim */
 
   /* Bubbles */
   --kk-bubble-outgoing: #fee500; /* O/C */
@@ -338,6 +339,7 @@
   --kk-chat-pill-fg: rgba(255, 255, 255, 0.85);
   --kk-glass-bg: rgba(255, 255, 255, 0.17); /* D — #333333 over #080808 */
   --kk-glass-border: rgba(255, 255, 255, 0.2); /* D */
+  --kk-glass-strong-bg: rgba(255, 255, 255, 0.24); /* C */
 
   --kk-bubble-outgoing: #fee500;
   --kk-bubble-outgoing-fg: #191919;
@@ -417,6 +419,11 @@
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
   backdrop-filter: blur(24px) saturate(1.5);
   -webkit-backdrop-filter: blur(24px) saturate(1.5);
+}
+
+/* Glass that sits on a dimmed chat (capture chrome): denser so it reads as on top. */
+.kk-glass-strong {
+  background: var(--kk-glass-strong-bg);
 }
 
 .font-kk {

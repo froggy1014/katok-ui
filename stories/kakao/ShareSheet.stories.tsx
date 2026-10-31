@@ -25,17 +25,17 @@ const FILTERS = [
 ];
 
 const ROOMS = [
-  { id: "run", name: "주말 러닝 크루", openChat: true, memberCount: 81, pinned: true, muted: true, lastMessage: "리얼 짱춥" },
+  { id: "walk", name: "동네 산책 모임", openChat: true, memberCount: 32, pinned: true, muted: true, lastMessage: "내일은 비 온대요" },
   {
     id: "family",
-    name: "엄마, 하은, 가족 모임",
+    name: "엄마, 아빠, 동생",
     memberCount: 5,
     pinned: true,
     muted: true,
     avatar: [PEOPLE.haeun.avatar, PEOPLE.minji.avatar, PEOPLE.junho.avatar, PEOPLE.seoyeon.avatar],
-    lastMessage: "미국 시간으로 착각한 거 아니지ㅋ",
+    lastMessage: "저녁 먹고 들어와",
   },
-  { id: "notice", name: "공지방 ) 주말 러닝 크루", openChat: true, memberCount: 79, pinned: true, muted: true, lastMessage: "톡게시판 '일정': #81 정기런" },
+  { id: "notice", name: "공지) 동네 산책 모임", openChat: true, memberCount: 30, pinned: true, muted: true, lastMessage: "톡게시판 '일정': 11월 코스 안내" },
   { id: "minji", name: PEOPLE.minji.name, avatar: PEOPLE.minji.avatar, lastMessage: "ㅋㅋㅋㅋ 내일 봐" },
   { id: "junho", name: PEOPLE.junho.name, avatar: PEOPLE.junho.avatar, lastMessage: "사진을 보냈습니다." },
 ];
@@ -66,12 +66,12 @@ function Demo() {
 export const OverChatRoom: Story = {
   render: () => (
     <div className="relative h-full">
-      <ChatRoom header={<ChatHeader title="주말 러닝 크루" memberCount={8} unreadTotal={51} />}>
+      <ChatRoom header={<ChatHeader title="북클럽" memberCount={5} unreadTotal={7} />}>
         <MessageGroup sender={PEOPLE.minji} timestamp="오후 1:12">
-          <ChatBubble>아니더라도 스페셜 세션으로 하기 좋을 듯!</ChatBubble>
+          <ChatBubble>다음 책은 투표로 정할까요?</ChatBubble>
         </MessageGroup>
         <MessageGroup sender={PEOPLE.seoyeon} timestamp="오후 1:15">
-          <ChatBubble>좋다좋다</ChatBubble>
+          <ChatBubble>좋아요!</ChatBubble>
         </MessageGroup>
       </ChatRoom>
       <div className="absolute inset-0 bg-kk-sheet-scrim" />

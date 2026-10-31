@@ -33,7 +33,7 @@ const CaptureHeader = React.forwardRef<HTMLElement, CaptureHeaderProps>(
           type="button"
           aria-label="캡처 닫기"
           onClick={onClose}
-          className="kk-glass flex size-[44px] items-center justify-center rounded-full outline-none focus-visible:ring-2 focus-visible:ring-kk-yellow"
+          className="kk-glass kk-glass-strong flex size-[44px] items-center justify-center rounded-full outline-none focus-visible:ring-2 focus-visible:ring-kk-yellow"
         >
           <XIcon size={24} strokeWidth={1.8} />
         </button>
@@ -46,7 +46,7 @@ const CaptureHeader = React.forwardRef<HTMLElement, CaptureHeaderProps>(
         <button
           type="button"
           onClick={onClear}
-          className="kk-glass h-[44px] rounded-full px-[16px] text-[16px] outline-none focus-visible:ring-2 focus-visible:ring-kk-yellow"
+          className="kk-glass kk-glass-strong h-[44px] rounded-full px-[16px] text-[16px] outline-none focus-visible:ring-2 focus-visible:ring-kk-yellow"
         >
           선택 해제
         </button>
@@ -90,7 +90,7 @@ const CaptureToolbar = React.forwardRef<HTMLDivElement, CaptureToolbarProps>(
       className={cn("font-kk px-[10px] pb-[calc(8px+env(safe-area-inset-bottom))] pt-[6px]", className)}
       {...props}
     >
-      <div className="kk-glass flex h-[48px] items-center justify-between rounded-full pl-[16px] pr-[6px] text-kk-chat-header-fg">
+      <div className="kk-glass kk-glass-strong flex h-[48px] items-center justify-between rounded-full pl-[16px] pr-[6px] text-kk-chat-header-fg">
         <button
           type="button"
           onClick={onOptions}

@@ -59,7 +59,7 @@ export const Channel: Story = {
 };
 
 export const OpenChat: Story = {
-  args: { openChat: true, name: "주말 러닝 크루", memberCount: 81, avatar: undefined, lastMessage: "리얼 짱춥", unreadCount: 0 },
+  args: { openChat: true, name: "동네 산책 모임", memberCount: 32, avatar: undefined, lastMessage: "내일은 비 온대요", unreadCount: 0 },
 };
 
 /** `selected` turns the row into a checkbox for share / invite pickers. */
@@ -71,13 +71,13 @@ export const Picker: Story = {
       <div className="-mx-6 flex flex-col">
         <ChatListItem name="엄마" avatar={PEOPLE.haeun.avatar} pinned lastMessage="밥은 먹었어?" selected={picked.includes("mom")} onClick={() => toggle("mom")} />
         <ChatListItem
-          name="주말 러닝 크루"
+          name="동네 산책 모임"
           openChat
-          memberCount={81}
+          memberCount={32}
           muted
-          lastMessage="리얼 짱춥"
-          selected={picked.includes("run")}
-          onClick={() => toggle("run")}
+          lastMessage="내일은 비 온대요"
+          selected={picked.includes("walk")}
+          onClick={() => toggle("walk")}
         />
         <ChatListItem name={PEOPLE.minji.name} avatar={PEOPLE.minji.avatar} lastMessage="ㅋㅋㅋㅋ 내일 봐" selected={picked.includes("minji")} onClick={() => toggle("minji")} />
       </div>
