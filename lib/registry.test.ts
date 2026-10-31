@@ -62,6 +62,22 @@ describe("components", () => {
   // the file is a client module (this shipped once and failed the deploy).
   const CLIENT_ONLY = /\bReact\.use(State|Effect|LayoutEffect|Ref|Reducer|SyncExternalStore|ImperativeHandle)\b|\son[A-Z]\w*=\{\s*(\([^)]*\)|\w+)\s*=>/;
 
+  // A server component can render a client component but not call a client function.
+  it("exports only components and types from client files", () => {
+    for (const item of items)
+      for (const f of item.files.filter((f) => f.path.endsWith(".tsx"))) {
+        const src = read(f.path);
+        if (!src.startsWith('"use client";')) continue;
+        for (const [, list] of src.matchAll(/export \{([^}]*)\}/g)) {
+          const helpers = list
+            .split(",")
+            .map((n) => n.trim())
+            .filter((n) => n && !n.startsWith("type ") && /^[a-z]/.test(n));
+          expect(helpers, `${f.path} exports functions`).toEqual([]);
+        }
+      }
+  });
+
   it('marks files with hooks or inline handlers "use client"', () => {
     for (const item of items)
       for (const f of item.files.filter((f) => f.path.endsWith(".tsx"))) {
