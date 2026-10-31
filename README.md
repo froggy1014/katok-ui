@@ -37,6 +37,10 @@ Each component is independent — it brings the files it needs (tokens, icons, s
 | `date-separator` | Date pill + `formatKakaoDate()` |
 | `system-message` | Join / leave / invite / deleted notices |
 | `chat-list-item` | Chats tab row: unread badge, mute, pin, member count, open chat mark, `render` polymorphism; `selected` makes it a picker row |
+| `mention` | Blue `@이름` (`withMentions()`) and the "@" member list above the input |
+| `sticker-message` | Emoticon message: the art alone, no bubble |
+| `media-bubble` | Shared photo / video / short-form card with source, title, play mark, side share button |
+| `bot-message` | Chatbot answer with "전체보기 >" and the follow-up button card |
 | `message-reactions` | Reaction chips under a bubble (`<ChatBubble reactions>`), counts, your own highlighted, add chip |
 | `message-actions` | Long-press menu: quick-reaction card + 복사 · 답장 · 공유 · … · 삭제 |
 | `bottom-sheet` | Sheet surface (44pt corners, grabber) and sheet search field |

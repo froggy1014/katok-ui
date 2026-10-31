@@ -200,6 +200,78 @@
       ]
     },
     {
+      "name": "mention",
+      "type": "registry:component",
+      "title": "Mention",
+      "description": "Blue `@이름` in bubbles and the input (`withMentions()`), and the member list that pops up above the input after \"@\".",
+      "registryDependencies": [
+        "utils",
+        "https://katok-ui.jeongmin.dev/r/kakao-core.json",
+        "https://katok-ui.jeongmin.dev/r/profile-avatar.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/kakao/mention.tsx",
+          "type": "registry:component",
+          "target": "components/ui/kakao/mention.tsx"
+        }
+      ]
+    },
+    {
+      "name": "sticker-message",
+      "type": "registry:component",
+      "title": "Sticker Message",
+      "description": "Emoticon / sticker message: the art alone at ~150pt, no bubble, time beside it.",
+      "registryDependencies": [
+        "utils",
+        "https://katok-ui.jeongmin.dev/r/kakao-core.json",
+        "https://katok-ui.jeongmin.dev/r/chat-bubble.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/kakao/sticker-message.tsx",
+          "type": "registry:component",
+          "target": "components/ui/kakao/sticker-message.tsx"
+        }
+      ]
+    },
+    {
+      "name": "media-bubble",
+      "type": "registry:component",
+      "title": "Media Bubble",
+      "description": "Shared photo / video / short-form card: 16pt-radius poster, source and title over a top scrim, play mark, side share button.",
+      "registryDependencies": [
+        "utils",
+        "https://katok-ui.jeongmin.dev/r/kakao-core.json",
+        "https://katok-ui.jeongmin.dev/r/chat-bubble.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/kakao/media-bubble.tsx",
+          "type": "registry:component",
+          "target": "components/ui/kakao/media-bubble.tsx"
+        }
+      ]
+    },
+    {
+      "name": "bot-message",
+      "type": "registry:component",
+      "title": "Bot Message",
+      "description": "Chatbot answer clipped with a \"전체보기 >\" footer, plus the follow-up card with one gray button.",
+      "registryDependencies": [
+        "utils",
+        "https://katok-ui.jeongmin.dev/r/kakao-core.json",
+        "https://katok-ui.jeongmin.dev/r/chat-bubble.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/kakao/bot-message.tsx",
+          "type": "registry:component",
+          "target": "components/ui/kakao/bot-message.tsx"
+        }
+      ]
+    },
+    {
       "name": "message-reactions",
       "type": "registry:component",
       "title": "Message Reactions",

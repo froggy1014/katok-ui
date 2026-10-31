@@ -39,10 +39,12 @@ const MessageGroup = React.forwardRef<HTMLDivElement, MessageGroupProps>(
   ) => {
     const items = React.Children.toArray(children).filter(React.isValidElement) as React.ReactElement<BubbleChildProps>[];
     const last = items.length - 1;
+    // Stickers and media cards have no tail; the tail goes to the first real bubble.
+    const tailAt = items.findIndex((c) => !(c.type as { kkNoTail?: boolean }).kkNoTail);
     const bubbles = items.map((child, i) =>
       React.cloneElement(child, {
         variant: child.props.variant ?? variant,
-        showTail: child.props.showTail ?? i === 0,
+        showTail: child.props.showTail ?? i === tailAt,
         timestamp: child.props.timestamp ?? (i === last ? timestamp : undefined),
         unreadCount: child.props.unreadCount ?? (i === last ? unreadCount : undefined),
       })

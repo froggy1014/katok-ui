@@ -100,6 +100,16 @@ Measured from an iOS 26 device screenshot (**S**). Icons in the stories are stan
 | Group divider | full-width `#DBDBDB` |
 | Banner | `--kk-sheet-fill`, 12pt radius, 16px bold title, `#5C5C5C` 15px link with chevron |
 
+### Rich messages
+From kakaocorp.com screenshots (**S**).
+
+| Part | Value |
+|---|---|
+| `--kk-mention` | `#3393FF` |
+| Sticker | ~150pt, no bubble |
+| Media card | 283×377pt (3:4), 16pt radius; side share button 37pt at the header glass (`#C0D1DD` on `#ABC1D1`) |
+| Bot answer | white bubble, "전체보기 >" footer in secondary gray; follow-up card button `#F0F0F0`, 8pt radius |
+
 ### Chat-room sheets and modes
 Measured from iOS 26 device screenshots (**S**); dark values **C**.
 

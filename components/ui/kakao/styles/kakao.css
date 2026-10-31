@@ -106,6 +106,7 @@
   --color-kk-chip-fg: var(--kk-chip-fg);
   --color-kk-chip-selected: var(--kk-chip-selected);
   --color-kk-chip-selected-fg: var(--kk-chip-selected-fg);
+  --color-kk-mention: var(--kk-mention);
   --color-kk-notice-bg: var(--kk-notice-bg);
   --color-kk-notice-icon: var(--kk-notice-icon);
   --color-kk-sheet-divider: var(--kk-sheet-divider);
@@ -245,6 +246,7 @@
   --kk-chip-selected-fg: #ffffff; /* S */
 
   /* Chat-room surfaces — device screenshots (iOS 26) */
+  --kk-mention: #3393ff; /* S — @멘션 in the ChatGPT for Kakao announcement */
   --kk-notice-bg: rgba(255, 255, 255, 0.95); /* S — reads #7F7F7F under the 50% scrim */
   --kk-notice-icon: #3290fc; /* S */
   --kk-sheet-divider: #e5e5e5; /* S */
@@ -385,6 +387,7 @@
   --kk-chip-selected: #f2f2f2; /* C */
   --kk-chip-selected-fg: #191919; /* C */
   --kk-notice-bg: rgba(44, 44, 46, 0.95); /* C */
+  --kk-mention: #5aa8ff; /* C */
   --kk-sheet-divider: rgba(255, 255, 255, 0.1); /* C */
   --kk-sheet-empty: #6d6d72; /* C */
   --kk-call-tint-bg: rgba(68, 207, 127, 0.18); /* C */

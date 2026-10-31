@@ -36,6 +36,7 @@ const MessageInput = React.forwardRef<HTMLTextAreaElement, MessageInputProps>(
       maxRows = 5,
       placeholder = "메시지 입력",
       disabled,
+      onKeyDown,
       ...props
     },
     ref
@@ -94,6 +95,9 @@ const MessageInput = React.forwardRef<HTMLTextAreaElement, MessageInputProps>(
             aria-label="메시지"
             onChange={(e) => update(e.target.value)}
             onKeyDown={(e) => {
+              // Yours runs first; preventDefault() there (e.g. a mention list taking Enter) skips sending.
+              onKeyDown?.(e);
+              if (e.defaultPrevented) return;
               if (e.key === "Enter" && !e.shiftKey && !e.nativeEvent.isComposing) {
                 e.preventDefault();
                 send();
