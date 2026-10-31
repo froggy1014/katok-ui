@@ -49,16 +49,48 @@ const Picked = () => (
 /** Picked messages stay bright inside a dashed frame; the rest of the chat dims. */
 export const Capture: Story = {
   render: () => (
-    <ChatRoom stickToBottom={false} header={<CaptureHeader />} input={<CaptureToolbar />}>
+    <ChatRoom stickToBottom={false} header={<CaptureHeader />} input={<CaptureToolbar />} floatingInput>
       <Before />
       <CaptureSelection>
         <Picked />
       </CaptureSelection>
       <MessageGroup sender={PEOPLE.haeun} timestamp="오후 9:12">
         <ChatBubble>낼 아침에 갈 듯</ChatBubble>
+        <ChatBubble>ㅋㅋ</ChatBubble>
+      </MessageGroup>
+      <MessageGroup variant="outgoing" timestamp="오후 9:13">
+        <ChatBubble>ㅇㅋ 조심히 와</ChatBubble>
       </MessageGroup>
     </ChatRoom>
   ),
+};
+
+/** Selection running under the toolbar: the toolbar and the notice-free header stay on top and tappable. */
+export const CaptureToBottom: Story = {
+  render: () => (
+    <ChatRoom header={<CaptureHeader />} input={<CaptureToolbar />} floatingInput>
+      <Before />
+      <CaptureSelection>
+        <Picked />
+        <MessageGroup sender={PEOPLE.haeun} timestamp="오후 9:12">
+          <ChatBubble>낼 아침에 갈 듯</ChatBubble>
+          <ChatBubble>ㅋㅋ</ChatBubble>
+        </MessageGroup>
+        <MessageGroup variant="outgoing" timestamp="오후 9:13">
+          <ChatBubble>ㅇㅋ 조심히 와</ChatBubble>
+        </MessageGroup>
+      </CaptureSelection>
+    </ChatRoom>
+  ),
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    for (const name of ["저장", "공유", "캡처 닫기"]) {
+      const button = canvas.getByRole("button", { name });
+      const r = button.getBoundingClientRect();
+      const top = document.elementFromPoint(r.left + r.width / 2, r.top + r.height / 2);
+      await expect(button.contains(top), `${name} is the topmost element`).toBe(true);
+    }
+  },
 };
 
 export const PayActionSheet: Story = {

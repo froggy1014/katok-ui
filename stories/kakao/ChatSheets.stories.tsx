@@ -72,6 +72,15 @@ export const FileSheet: Story = {
   ),
 };
 
+FileSheet.play = async ({ canvasElement }) => {
+  // The scrim must cover the pinned notice and header pills, not the other way round.
+  for (const el of [canvasElement.querySelector('[role="note"]')!, within(canvasElement).getByRole("button", { name: /뒤로/ })]) {
+    const r = el.getBoundingClientRect();
+    const top = document.elementFromPoint(r.left + r.width / 2, r.top + r.height / 2);
+    await expect(el.contains(top)).toBe(false);
+  }
+};
+
 export const CallSheet: Story = {
   render: () => (
     <Backdrop
