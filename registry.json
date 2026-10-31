@@ -217,6 +217,32 @@
       ]
     },
     {
+      "name": "bottom-sheet",
+      "type": "registry:component",
+      "title": "Bottom Sheet",
+      "description": "Sheet surface with 44pt top corners and a grabber, plus the gray sheet search field.",
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "components/ui/kakao/bottom-sheet.tsx",
+          "type": "registry:component",
+          "target": "components/ui/kakao/bottom-sheet.tsx"
+        },
+        {
+          "path": "components/ui/kakao/icons.tsx",
+          "type": "registry:component",
+          "target": "components/ui/kakao/icons.tsx"
+        },
+        {
+          "path": "components/ui/kakao/styles/kakao.css",
+          "type": "registry:file",
+          "target": "components/ui/kakao/styles/kakao.css"
+        }
+      ]
+    },
+    {
       "name": "share-sheet",
       "type": "registry:component",
       "title": "Share Sheet",
@@ -229,6 +255,11 @@
           "path": "components/ui/kakao/share-sheet.tsx",
           "type": "registry:component",
           "target": "components/ui/kakao/share-sheet.tsx"
+        },
+        {
+          "path": "components/ui/kakao/bottom-sheet.tsx",
+          "type": "registry:component",
+          "target": "components/ui/kakao/bottom-sheet.tsx"
         },
         {
           "path": "components/ui/kakao/chat-list-item.tsx",
@@ -244,6 +275,84 @@
           "path": "components/ui/kakao/icons.tsx",
           "type": "registry:component",
           "target": "components/ui/kakao/icons.tsx"
+        },
+        {
+          "path": "components/ui/kakao/styles/kakao.css",
+          "type": "registry:file",
+          "target": "components/ui/kakao/styles/kakao.css"
+        }
+      ]
+    },
+    {
+      "name": "message-reactions",
+      "type": "registry:component",
+      "title": "Message Reactions",
+      "description": "Reaction chips under a bubble with counts, your own reactions highlighted, and a smiley-plus chip to add more.",
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "components/ui/kakao/message-reactions.tsx",
+          "type": "registry:component",
+          "target": "components/ui/kakao/message-reactions.tsx"
+        },
+        {
+          "path": "components/ui/kakao/icons.tsx",
+          "type": "registry:component",
+          "target": "components/ui/kakao/icons.tsx"
+        },
+        {
+          "path": "components/ui/kakao/styles/kakao.css",
+          "type": "registry:file",
+          "target": "components/ui/kakao/styles/kakao.css"
+        }
+      ]
+    },
+    {
+      "name": "reaction-picker",
+      "type": "registry:component",
+      "title": "Reaction Picker",
+      "description": "Bottom sheet with reaction search and a sectioned 6-column emoji grid.",
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "components/ui/kakao/reaction-picker.tsx",
+          "type": "registry:component",
+          "target": "components/ui/kakao/reaction-picker.tsx"
+        },
+        {
+          "path": "components/ui/kakao/bottom-sheet.tsx",
+          "type": "registry:component",
+          "target": "components/ui/kakao/bottom-sheet.tsx"
+        },
+        {
+          "path": "components/ui/kakao/icons.tsx",
+          "type": "registry:component",
+          "target": "components/ui/kakao/icons.tsx"
+        },
+        {
+          "path": "components/ui/kakao/styles/kakao.css",
+          "type": "registry:file",
+          "target": "components/ui/kakao/styles/kakao.css"
+        }
+      ]
+    },
+    {
+      "name": "message-actions",
+      "type": "registry:component",
+      "title": "Message Actions",
+      "description": "Long-press menu: quick-reaction card over 복사 · 답장 · 공유 · … · 삭제 with trailing icons.",
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "components/ui/kakao/message-actions.tsx",
+          "type": "registry:component",
+          "target": "components/ui/kakao/message-actions.tsx"
         },
         {
           "path": "components/ui/kakao/styles/kakao.css",

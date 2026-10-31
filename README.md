@@ -28,7 +28,7 @@ Each component is independent — it brings the files it needs (tokens, icons, s
 
 | Component | |
 |---|---|
-| `chat-bubble` | Yellow outgoing / white incoming, first-bubble tail, unread count "1", time, "수정됨" |
+| `chat-bubble` | Yellow outgoing / white incoming, first-bubble tail, unread count "1", time, "수정됨" inside the bubble, pressed state, `reactions` slot |
 | `message-group` | Consecutive messages: squircle avatar + name on the first, tail on the first, time on the last |
 | `profile-avatar` | Squircle, default silhouette, 2–4 member group-chat composites |
 | `chat-header` | iOS 26 floating glass pills: back + unread total, centered title + member count, search + menu; large-title tab header |
@@ -36,6 +36,10 @@ Each component is independent — it brings the files it needs (tokens, icons, s
 | `date-separator` | Date pill + `formatKakaoDate()` |
 | `system-message` | Join / leave / invite / deleted notices |
 | `chat-list-item` | Chats tab row: unread badge, mute, pin, member count, open chat mark, `render` polymorphism; `selected` makes it a picker row |
+| `message-reactions` | Reaction chips under a bubble (`<ChatBubble reactions>`), counts, your own highlighted, add chip |
+| `message-actions` | Long-press menu: quick-reaction card + 복사 · 답장 · 공유 · … · 삭제 |
+| `bottom-sheet` | Sheet surface (44pt corners, grabber) and sheet search field |
+| `reaction-picker` | Reaction search + sectioned 6-column emoji grid |
 | `share-sheet` | Share bottom sheet: grabber, search, filter chips, picker rows, quick-share targets |
 | `chat-room` | Layout shell: header, message log, input, custom theme background |
 | `alimtalk-bubble` | `messageType` BA/EX/AD/MI × `emphasizeType` NONE/TEXT/IMAGE/ITEM_LIST, buttons, quick replies — matched against the Kakao Business guide |

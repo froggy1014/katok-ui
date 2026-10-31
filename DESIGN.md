@@ -74,6 +74,21 @@ Pill 48pt tall, 10pt from the screen edges; round buttons 32pt, emoji button 24p
 | `--kk-check-border` | `#949494` ring, 22pt, 1.5pt stroke | S |
 | `--kk-check-selected` | `#FEE500` fill + dark check | C |
 
+### Reactions & message menu
+Measured from kakaocorp.com KakaoTalk service screenshots and the 26.4 update image (**S**). Dark values are **C**.
+
+| Token / part | Value |
+|---|---|
+| "수정됨" | inside the bubble, own line, right-aligned, 12px; `rgba(0,0,0,.6)` on yellow (`#665C00`) |
+| `--kk-bubble-pressed` | `brightness(.9)` on the pressed bubble while the menu is open |
+| `--kk-reaction-bg` | `rgba(255,255,255,.5)` — `#D6E0E9` on `#ABC0D1`; chips 24pt tall, 4pt apart, 8pt between rows, 8pt under the bubble |
+| `--kk-reaction-selected-bg` | `rgba(255,255,255,.9)` (**C**, the viewer's own reaction) |
+| Quick-reaction card | white, 50pt tall, 16pt radius, six emoji |
+| Menu | white card, 300pt wide, 16pt radius, 5pt under the reaction card; rows 45pt, 17px, icon right |
+| `--kk-menu-pressed` / `-divider` | `#F5F5F5` / `#F0F0F0` |
+| `--kk-menu-destructive` | `#F56B3A` (삭제) |
+| Chat behind the menu | not dimmed; the cards cast a shadow (`--kk-menu-shadow`, **C**) |
+
 ### Share sheet
 Measured from an iOS 26 device screenshot (**S**, 402pt wide @3x). Dark values are **C**.
 

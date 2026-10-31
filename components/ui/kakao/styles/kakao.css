@@ -58,6 +58,18 @@
   --color-kk-bubble-incoming: var(--kk-bubble-incoming);
   --color-kk-bubble-incoming-fg: var(--kk-bubble-incoming-fg);
   --color-kk-unread: var(--kk-unread);
+  --color-kk-bubble-outgoing-edited: var(--kk-bubble-outgoing-edited);
+  --color-kk-bubble-incoming-edited: var(--kk-bubble-incoming-edited);
+
+  /* === Reactions & message menu === */
+  --color-kk-reaction-bg: var(--kk-reaction-bg);
+  --color-kk-reaction-selected-bg: var(--kk-reaction-selected-bg);
+  --color-kk-reaction-fg: var(--kk-reaction-fg);
+  --color-kk-menu-bg: var(--kk-menu-bg);
+  --color-kk-menu-fg: var(--kk-menu-fg);
+  --color-kk-menu-pressed: var(--kk-menu-pressed);
+  --color-kk-menu-divider: var(--kk-menu-divider);
+  --color-kk-menu-destructive: var(--kk-menu-destructive);
 
   /* === Input bar (InputBarStyle-Chat) === */
   --color-kk-input-bar-bg: var(--kk-input-bar-bg);
@@ -163,6 +175,20 @@
   --kk-bubble-incoming: #ffffff; /* S */
   --kk-bubble-incoming-fg: #191919;
   --kk-unread: #fee500; /* D (dark) — theme slot -ios-unread-text-color */
+  --kk-bubble-outgoing-edited: rgba(0, 0, 0, 0.6); /* S — #665c00 on #fee500 */
+  --kk-bubble-incoming-edited: rgba(0, 0, 0, 0.5); /* C */
+  --kk-bubble-pressed: brightness(0.9); /* S — selected bubble while the menu is open */
+
+  /* Reactions & message menu — kakaocorp.com service screenshots */
+  --kk-reaction-bg: rgba(255, 255, 255, 0.5); /* S — #d6e0e9 over #abc0d1 */
+  --kk-reaction-selected-bg: rgba(255, 255, 255, 0.9); /* C */
+  --kk-reaction-fg: #191919; /* S */
+  --kk-menu-bg: #ffffff; /* S */
+  --kk-menu-fg: #191919; /* S */
+  --kk-menu-pressed: #f5f5f5; /* S */
+  --kk-menu-divider: #f0f0f0; /* S */
+  --kk-menu-destructive: #f56b3a; /* S */
+  --kk-menu-shadow: 0 4px 16px rgba(0, 0, 0, 0.14); /* C — cards cast a shade on the chat bg */
 
   /* Input bar */
   --kk-input-bar-bg: #d8e7ef; /* S — floating pill */
@@ -280,6 +306,17 @@
   --kk-bubble-incoming: #282828; /* D */
   --kk-bubble-incoming-fg: #f2f2f2; /* D */
   --kk-unread: #fee500; /* D */
+  --kk-bubble-incoming-edited: rgba(255, 255, 255, 0.5); /* C */
+
+  --kk-reaction-bg: rgba(255, 255, 255, 0.14); /* C */
+  --kk-reaction-selected-bg: rgba(255, 255, 255, 0.3); /* C */
+  --kk-reaction-fg: #ededed; /* C */
+  --kk-menu-bg: #2c2c2e; /* C */
+  --kk-menu-fg: #ededed; /* C */
+  --kk-menu-pressed: rgba(255, 255, 255, 0.08); /* C */
+  --kk-menu-divider: rgba(255, 255, 255, 0.08); /* C */
+  --kk-menu-destructive: #ff7a4d; /* C */
+  --kk-menu-shadow: 0 4px 16px rgba(0, 0, 0, 0.5); /* C */
 
   --kk-input-bar-bg: #141414; /* D */
   --kk-input-icon: #f2f2f2; /* D */

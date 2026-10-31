@@ -5,7 +5,7 @@ import { ChatBubble } from "@/components/ui/kakao/chat-bubble";
 import { ChatHeader } from "@/components/ui/kakao/chat-header";
 import { ChatListItem } from "@/components/ui/kakao/chat-list-item";
 import { ChatRoom } from "@/components/ui/kakao/chat-room";
-import { DownloadIcon, MoreHorizontalIcon } from "@/components/ui/kakao/icons";
+import { DownloadIcon, MeIcon, MoreHorizontalIcon } from "@/components/ui/kakao/icons";
 import { MessageGroup } from "@/components/ui/kakao/message-group";
 import { ShareSheet, ShareTarget } from "@/components/ui/kakao/share-sheet";
 import { PEOPLE } from "./fixtures";
@@ -40,15 +40,6 @@ const ROOMS = [
   { id: "junho", name: PEOPLE.junho.name, avatar: PEOPLE.junho.avatar, lastMessage: "사진을 보냈습니다." },
 ];
 
-/** "나" in a ring — the 나에게 (chat with yourself) target. */
-function MeIcon() {
-  return (
-    <span className="flex size-[26px] items-center justify-center rounded-full border-2 border-current text-[13px] font-bold leading-none">
-      나
-    </span>
-  );
-}
-
 function Demo() {
   const [picked, setPicked] = React.useState<string[]>([]);
   const toggle = (id: string) => setPicked((p) => (p.includes(id) ? p.filter((x) => x !== id) : [...p, id]));
@@ -57,7 +48,7 @@ function Demo() {
       filters={FILTERS}
       targets={
         <>
-          <ShareTarget icon={<MeIcon />} label="나에게" />
+          <ShareTarget icon={<MeIcon size={28} />} label="나에게" />
           <ShareTarget icon={<DownloadIcon size={24} />} label="저장" />
           <ShareTarget icon={<MoreHorizontalIcon size={26} />} label="더보기" />
         </>
