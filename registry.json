@@ -503,6 +503,113 @@
       ]
     },
     {
+      "name": "profile-view",
+      "type": "registry:component",
+      "title": "Profile View",
+      "description": "Full-screen profile: background hero, heart count, avatar, name, glass action bar (나와의 채팅 | 새 게시물), post grid with pin / video marks.",
+      "registryDependencies": [
+        "utils",
+        "https://katok-ui.jeongmin.dev/r/kakao-core.json",
+        "https://katok-ui.jeongmin.dev/r/profile-avatar.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/kakao/profile-view.tsx",
+          "type": "registry:component",
+          "target": "components/ui/kakao/profile-view.tsx"
+        }
+      ]
+    },
+    {
+      "name": "feed-post",
+      "type": "registry:component",
+      "title": "Feed Post",
+      "description": "A 소식 feed post: author row with time and kind, rounded photo, like and comment.",
+      "registryDependencies": [
+        "utils",
+        "https://katok-ui.jeongmin.dev/r/kakao-core.json",
+        "https://katok-ui.jeongmin.dev/r/profile-avatar.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/kakao/feed-post.tsx",
+          "type": "registry:component",
+          "target": "components/ui/kakao/feed-post.tsx"
+        }
+      ]
+    },
+    {
+      "name": "call-screen",
+      "type": "registry:component",
+      "title": "Call Screen",
+      "description": "보이스톡 in progress: dark card with the callee, ringing dots, record pill and tip, control row with the red hang-up.",
+      "registryDependencies": [
+        "utils",
+        "https://katok-ui.jeongmin.dev/r/kakao-core.json",
+        "https://katok-ui.jeongmin.dev/r/profile-avatar.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/kakao/call-screen.tsx",
+          "type": "registry:component",
+          "target": "components/ui/kakao/call-screen.tsx"
+        }
+      ]
+    },
+    {
+      "name": "call-transcript",
+      "type": "registry:component",
+      "title": "Call Transcript",
+      "description": "A recorded 보이스톡 as chat: gray / yellow lines with offsets, the playing line outlined, AI 통화요약 pill, player with ±5s.",
+      "registryDependencies": [
+        "utils",
+        "https://katok-ui.jeongmin.dev/r/kakao-core.json",
+        "https://katok-ui.jeongmin.dev/r/profile-avatar.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/kakao/call-transcript.tsx",
+          "type": "registry:component",
+          "target": "components/ui/kakao/call-transcript.tsx"
+        }
+      ]
+    },
+    {
+      "name": "shortform-view",
+      "type": "registry:component",
+      "title": "Shortform View",
+      "description": "지금 tab short-form chrome over your clip: heading, segments, right action column with counts, channel row, title, views, progress.",
+      "registryDependencies": [
+        "utils",
+        "https://katok-ui.jeongmin.dev/r/kakao-core.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/kakao/shortform-view.tsx",
+          "type": "registry:component",
+          "target": "components/ui/kakao/shortform-view.tsx"
+        }
+      ]
+    },
+    {
+      "name": "community-post",
+      "type": "registry:component",
+      "title": "Community Post",
+      "description": "지금 tab open-chat community post: room, author, topic tag, photo, reaction summary and comments, threaded replies.",
+      "registryDependencies": [
+        "utils",
+        "https://katok-ui.jeongmin.dev/r/kakao-core.json",
+        "https://katok-ui.jeongmin.dev/r/profile-avatar.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/kakao/community-post.tsx",
+          "type": "registry:component",
+          "target": "components/ui/kakao/community-post.tsx"
+        }
+      ]
+    },
+    {
       "name": "chat-room",
       "type": "registry:component",
       "title": "Chat Room",

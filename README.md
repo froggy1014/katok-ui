@@ -56,6 +56,12 @@ Each component is independent — it brings the files it needs (tokens, icons, s
 | `filter-chips` | Pill filters with orange counts (chats-tab folders, 친구 / 소식, sheet filters) |
 | `promo-banner` | Gray promo card at the top of the tabs and in sheets |
 | `friend-list` | Friends-tab section labels, updated-friends strip, friend rows (선물하기, counts) |
+| `profile-view` | Full-screen profile with glass action bar and post grid |
+| `feed-post` | 소식 feed post: author, photo, like and comment |
+| `call-screen` | 보이스톡 in progress: callee card, record pill, control row |
+| `call-transcript` | Recorded 보이스톡 as chat lines with a player |
+| `shortform-view` | 지금 tab short-form chrome over your clip |
+| `community-post` | 지금 tab community post with threaded replies |
 | `chat-room` | Layout shell: header, message log, input, custom theme background |
 | `alimtalk-bubble` | `messageType` BA/EX/AD/MI × `emphasizeType` NONE/TEXT/IMAGE/ITEM_LIST, buttons, quick replies — matched against the Kakao Business guide |
 | `brand-message-bubble` | `chatBubbleType` TEXT/IMAGE/WIDE/CAROUSEL_FEED, ticket coupons, opt-out line; `adSenderName()` for the "(광고)" sender label |

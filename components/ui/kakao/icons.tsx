@@ -160,6 +160,39 @@ export const GiftBoxIcon = strokeIcon(
   "GiftBoxIcon",
   <path d="M4 10h16v9a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zM3 7.5h18V10H3zM12 7.5V21M12 7.5c-1.6-2.8-5-3.4-5-1.2 0 1.4 2.4 1.2 5 1.2Zm0 0c1.6-2.8 5-3.4 5-1.2 0 1.4-2.4 1.2-5 1.2Z" />
 );
+export const HeartIcon = strokeIcon(
+  "HeartIcon",
+  <path d="M19 14c1.5-1.5 3-3.2 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.8 0-3 .5-4.5 2-1.5-1.5-2.7-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4 3 5.5l7 7Z" />
+);
+export const BookmarkIcon = strokeIcon("BookmarkIcon", <path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z" />);
+export const MicIcon = strokeIcon(
+  "MicIcon",
+  <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3ZM19 10v2a7 7 0 0 1-14 0v-2M12 19v3" />
+);
+export const SpeakerIcon = strokeIcon(
+  "SpeakerIcon",
+  <path d="M11 4.7a.7.7 0 0 0-1.2-.5L6.4 7.6A1.4 1.4 0 0 1 5.4 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.4a1.4 1.4 0 0 1 1 .4l3.4 3.4a.7.7 0 0 0 1.2-.5zM16 9a5 5 0 0 1 0 6M19.4 18.4a9 9 0 0 0 0-12.8" />
+);
+export const SparklesIcon = strokeIcon(
+  "SparklesIcon",
+  <path d="M9.9 15.5A2 2 0 0 0 8.5 14l-6.1-1.6a.5.5 0 0 1 0-1L8.5 9.9A2 2 0 0 0 9.9 8.5l1.6-6.1a.5.5 0 0 1 1 0L14 8.5A2 2 0 0 0 15.5 10l6.1 1.6a.5.5 0 0 1 0 1L15.5 14a2 2 0 0 0-1.4 1.4l-1.6 6.2a.5.5 0 0 1-1 0zM20 3v4M22 5h-4" />
+);
+export const PhoneOffIcon = strokeIcon(
+  "PhoneOffIcon",
+  <path d="M3.5 12.5c4.7-4.2 12.3-4.2 17 0 .5.5.6 1.3.2 1.8l-1.3 1.6a1.4 1.4 0 0 1-1.7.3l-2.3-1.1a1.4 1.4 0 0 1-.8-1.2l-.1-1.5a12 12 0 0 0-5 0l-.1 1.5a1.4 1.4 0 0 1-.8 1.2l-2.3 1.1a1.4 1.4 0 0 1-1.7-.3l-1.3-1.6c-.4-.5-.3-1.3.2-1.8Z" />
+);
+/** Circular arrow with a "5": skip back / forward five seconds (original drawing). */
+export function SkipFiveIcon({ size = 24, forward = false, ...props }: IconProps & { forward?: boolean }) {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" aria-hidden="true" {...props}>
+      <g transform={forward ? "matrix(-1 0 0 1 24 0)" : undefined} stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round">
+        <path d="M4.5 8.5A8.5 8.5 0 1 1 3.5 12" />
+        <path d="M4 4v4.5h4.5" />
+      </g>
+      <text x="12" y="16" textAnchor="middle" fontSize="8.5" fontWeight="700" fill="currentColor">5</text>
+    </svg>
+  );
+}
 export const CopyIcon = strokeIcon(
   "CopyIcon",
   <>
