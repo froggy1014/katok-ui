@@ -1,3 +1,5 @@
+import { DEFAULT_QUICK_REACTIONS } from "@/components/ui/kakao/message-actions";
+
 // Sample data shared by stories. Images are local SVGs under public/samples.
 export const IMG = (name: string) => `/samples/${name}.svg`;
 
@@ -18,15 +20,7 @@ export const CHANNELS = {
 export const LONG_TEXT =
   "오늘 회의에서 나온 이야기 정리해서 공유할게요. 일정은 다음 주 화요일까지 1차 시안, 목요일에 리뷰, 금요일에 최종 확정하는 걸로 했고요. 디자인 쪽 리소스가 부족하면 미리 말해주세요!";
 
-/** KakaoTalk's six one-tap reactions, as Unicode stand-ins for Kakao's own art. */
-export const QUICK_REACTIONS = [
-  { id: "heart", emoji: "❤️", label: "하트" },
-  { id: "like", emoji: "👍", label: "좋아요" },
-  { id: "check", emoji: "✅", label: "체크" },
-  { id: "laugh", emoji: "😆", label: "웃음" },
-  { id: "wow", emoji: "😮", label: "놀람" },
-  { id: "sad", emoji: "😢", label: "슬픔" },
-];
+export const QUICK_REACTIONS = DEFAULT_QUICK_REACTIONS;
 
 export const REACTION_SECTIONS = [
   {

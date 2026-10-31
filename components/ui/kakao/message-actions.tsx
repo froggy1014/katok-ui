@@ -10,6 +10,16 @@ interface QuickReaction {
   label: string;
 }
 
+/** KakaoTalk's six one-tap reactions, as Unicode stand-ins for Kakao's own art. */
+const DEFAULT_QUICK_REACTIONS: QuickReaction[] = [
+  { id: "heart", emoji: "❤️", label: "하트" },
+  { id: "like", emoji: "👍", label: "좋아요" },
+  { id: "check", emoji: "✅", label: "체크" },
+  { id: "laugh", emoji: "😆", label: "웃음" },
+  { id: "wow", emoji: "😮", label: "놀람" },
+  { id: "sad", emoji: "😢", label: "슬픔" },
+];
+
 interface MessageAction {
   id: string;
   label: string;
@@ -114,4 +124,4 @@ const MessageActions = React.forwardRef<HTMLDivElement, MessageActionsProps>(
 );
 MessageActions.displayName = "MessageActions";
 
-export { MessageActions, type MessageActionsProps, type MessageAction, type QuickReaction };
+export { MessageActions, DEFAULT_QUICK_REACTIONS, type MessageActionsProps, type MessageAction, type QuickReaction };

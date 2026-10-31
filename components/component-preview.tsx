@@ -9,9 +9,10 @@ import { DateSeparator } from "@/components/ui/kakao/date-separator";
 import { MessageGroup } from "@/components/ui/kakao/message-group";
 import { MessageInput } from "@/components/ui/kakao/message-input";
 import { ProfileAvatar } from "@/components/ui/kakao/profile-avatar";
+import { AttachmentGroup, AttachmentItem, AttachmentPhotos, AttachmentSheet } from "@/components/ui/kakao/attachment-sheet";
 import { BottomSheet, SheetSearch } from "@/components/ui/kakao/bottom-sheet";
-import { CopyIcon, ReplyIcon, TrashIcon } from "@/components/ui/kakao/icons";
-import { MessageActions } from "@/components/ui/kakao/message-actions";
+import { CameraIcon, CopyIcon, ReplyIcon, TrashIcon } from "@/components/ui/kakao/icons";
+import { DEFAULT_QUICK_REACTIONS, MessageActions } from "@/components/ui/kakao/message-actions";
 import { MessageReactions } from "@/components/ui/kakao/message-reactions";
 import { ReactionPicker } from "@/components/ui/kakao/reaction-picker";
 import { ShareSheet } from "@/components/ui/kakao/share-sheet";
@@ -100,13 +101,29 @@ const PREVIEWS: Record<string, () => React.ReactNode> = {
     <div className="flex justify-end">
       <MessageActions
         className="w-[240px]"
-        reactions={["❤️", "👍", "✅", "😆", "😮", "😢"].map((e, i) => ({ id: String(i), emoji: e, label: e }))}
+        reactions={DEFAULT_QUICK_REACTIONS}
         actions={[
           { id: "copy", label: "복사", icon: <CopyIcon size={20} strokeWidth={1.7} /> },
           { id: "reply", label: "답장", icon: <ReplyIcon size={20} strokeWidth={1.7} /> },
           { id: "delete", label: "삭제", icon: <TrashIcon size={20} strokeWidth={1.7} />, destructive: true },
         ]}
       />
+    </div>
+  ),
+  "attachment-sheet": () => (
+    <div className="-mx-4 -mb-4 h-[300px] bg-kk-sheet-scrim pt-4">
+      <AttachmentSheet className="h-full">
+        <AttachmentPhotos
+          photos={[
+            { id: "1", src: S("photo-1") },
+            { id: "2", src: "/samples/photo-landscape.jpg" },
+          ]}
+          selected={["2"]}
+        />
+        <AttachmentGroup className="mt-[8px]">
+          <AttachmentItem icon={<CameraIcon size={22} className="text-[#3fb26a]" />} label="사진" />
+        </AttachmentGroup>
+      </AttachmentSheet>
     </div>
   ),
   "share-sheet": () => (

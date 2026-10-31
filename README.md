@@ -28,6 +28,7 @@ Each component is independent — it brings the files it needs (tokens, icons, s
 
 | Component | |
 |---|---|
+| `kakao-core` | Tokens (`kakao.css`) and the shared icon set; every item depends on it, so `shadcn add` pulls it in |
 | `chat-bubble` | Yellow outgoing / white incoming, first-bubble tail, unread count "1", time, "수정됨" inside the bubble, pressed state, `reactions` slot |
 | `message-group` | Consecutive messages: squircle avatar + name on the first, tail on the first, time on the last |
 | `profile-avatar` | Squircle, default silhouette, 2–4 member group-chat composites |
@@ -39,6 +40,7 @@ Each component is independent — it brings the files it needs (tokens, icons, s
 | `message-reactions` | Reaction chips under a bubble (`<ChatBubble reactions>`), counts, your own highlighted, add chip |
 | `message-actions` | Long-press menu: quick-reaction card + 복사 · 답장 · 공유 · … · 삭제 |
 | `bottom-sheet` | Sheet surface (44pt corners, grabber) and sheet search field |
+| `attachment-sheet` | "+" sheet: recent photos with camera tile and 전송, grouped attachment rows, promo banner |
 | `reaction-picker` | Reaction search + sectioned 6-column emoji grid |
 | `share-sheet` | Share bottom sheet: grabber, search, filter chips, picker rows, quick-share targets |
 | `chat-room` | Layout shell: header, message log, input, custom theme background |

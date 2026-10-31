@@ -89,6 +89,17 @@ Measured from kakaocorp.com KakaoTalk service screenshots and the 26.4 update im
 | `--kk-menu-destructive` | `#F56B3A` (삭제) |
 | Chat behind the menu | not dimmed; the cards cast a shadow (`--kk-menu-shadow`, **C**) |
 
+### Attachment sheet ("+")
+Measured from an iOS 26 device screenshot (**S**). Icons in the stories are stand-ins; pass your own.
+
+| Part | Value |
+|---|---|
+| "최근 사진" | 18px bold, 20pt from the left; 전송 pill 45×30, `#EFF0EF` / `#767676` while nothing is picked (yellow when enabled is **C**) |
+| Thumbnails | 104pt squares, 6pt apart, 12pt radius; camera tile `#949494`; 22pt pick ring 6pt from the top-right |
+| Rows | 46pt, 24pt icon at 21pt, 17px label 13pt after it |
+| Group divider | full-width `#DBDBDB` |
+| Banner | `--kk-sheet-fill`, 12pt radius, 16px bold title, `#5C5C5C` 15px link with chevron |
+
 ### Share sheet
 Measured from an iOS 26 device screenshot (**S**, 402pt wide @3x). Dark values are **C**.
 

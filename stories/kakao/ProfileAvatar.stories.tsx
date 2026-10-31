@@ -1,6 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/nextjs-vite";
+import { expect, waitFor } from "storybook/test";
 import { ProfileAvatar } from "@/components/ui/kakao/profile-avatar";
 import { PEOPLE } from "./fixtures";
+
+const IMG_JPG = (name: string) => `/samples/${name}.jpg`;
 
 const meta: Meta<typeof ProfileAvatar> = {
   title: "Kakao/ProfileAvatar",
@@ -47,4 +50,35 @@ export const GroupComposites: Story = {
 
 export const CustomPixelSize: Story = {
   args: { size: 96 },
+};
+
+/** Real photos of any aspect ratio are center-cropped into the squircle. */
+export const Photos: Story = {
+  render: () => (
+    <div className="flex items-center gap-4">
+      <ProfileAvatar src={IMG_JPG("photo-landscape")} name="가로 사진" size="xl" />
+      <ProfileAvatar src={IMG_JPG("photo-portrait")} name="세로 사진" size="xl" />
+      <ProfileAvatar src={[IMG_JPG("photo-landscape"), IMG_JPG("photo-portrait"), PEOPLE.minji.avatar]} name="3명" size="xl" />
+    </div>
+  ),
+};
+
+/** A URL that fails to load falls back to the default silhouette. */
+export const BrokenImage: Story = {
+  args: { src: "/samples/does-not-exist.jpg", name: "깨진 이미지", size: "xl" },
+  play: async ({ canvasElement }) => {
+    await waitFor(() => expect(canvasElement.querySelector("img")).toBeNull());
+  },
+};
+
+/** `renderImage` swaps in your own image element, e.g. Next.js `<Image fill />`. */
+export const CustomImage: Story = {
+  args: {
+    src: IMG_JPG("photo-portrait"),
+    size: "xl",
+    renderImage: ({ src, onError, className }) => (
+      // eslint-disable-next-line @next/next/no-img-element
+      <img src={src} onError={onError} alt="" className={`${className} grayscale`} data-testid="custom" />
+    ),
+  },
 };

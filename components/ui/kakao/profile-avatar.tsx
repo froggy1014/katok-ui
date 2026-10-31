@@ -1,3 +1,5 @@
+"use client";
+
 import * as React from "react";
 import { cn } from "@/lib/utils";
 import { SilhouetteIcon } from "./icons";
@@ -19,18 +21,32 @@ interface ProfileAvatarProps extends Omit<React.HTMLAttributes<HTMLSpanElement>,
   /** Used for alt text. */
   name?: string;
   size?: AvatarSize | number;
+  /**
+   * Swap the `<img>` for your own (e.g. Next.js `<Image fill />`). Receives the
+   * URL and an `onError` to call so a broken image falls back to the silhouette.
+   */
+  renderImage?: (props: { src: string; onError: () => void; className: string }) => React.ReactNode;
 }
 
-/** One squircle tile: the image, or the default silhouette when missing. */
-function Tile({ src, alt, px }: { src?: string; alt: string; px: number }) {
+const IMAGE_CLASS = "h-full w-full object-cover";
+
+/** One squircle tile: the image, or the default silhouette when missing or broken. */
+function Tile({ src, px, renderImage }: { src?: string; px: number; renderImage?: ProfileAvatarProps["renderImage"] }) {
+  const [failed, setFailed] = React.useState<string>();
+  const ok = src && failed !== src;
+  const onError = () => setFailed(src);
   return (
     <span
-      className="flex h-full w-full items-end justify-center overflow-hidden bg-kk-avatar-bg text-kk-avatar-fg"
+      className="relative flex h-full w-full items-end justify-center overflow-hidden bg-kk-avatar-bg text-kk-avatar-fg"
       style={{ borderRadius: "var(--kk-radius-avatar)" }}
     >
-      {src ? (
-        // eslint-disable-next-line @next/next/no-img-element
-        <img src={src} alt={alt} className="h-full w-full object-cover" />
+      {ok ? (
+        renderImage ? (
+          renderImage({ src, onError, className: IMAGE_CLASS })
+        ) : (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img src={src} alt="" loading="lazy" decoding="async" onError={onError} className={IMAGE_CLASS} />
+        )
       ) : (
         <SilhouetteIcon size={Math.round(px * 0.82)} />
       )}
@@ -58,7 +74,7 @@ const LAYOUTS: Record<number, { x: number; y: number; s: number }[]> = {
 };
 
 const ProfileAvatar = React.forwardRef<HTMLSpanElement, ProfileAvatarProps>(
-  ({ className, src, name = "", size = "md", style, ...props }, ref) => {
+  ({ className, src, name = "", size = "md", renderImage, style, ...props }, ref) => {
     const px = typeof size === "number" ? size : SIZES[size];
     const sources = Array.isArray(src) ? src.slice(0, 4) : [src];
     const layout = LAYOUTS[sources.length];
@@ -86,12 +102,12 @@ const ProfileAvatar = React.forwardRef<HTMLSpanElement, ProfileAvatarProps>(
                   height: p.s * px - 1,
                 }}
               >
-                <Tile src={s} alt="" px={p.s * px} />
+                <Tile src={s} px={p.s * px} renderImage={renderImage} />
               </span>
             );
           })
         ) : (
-          <Tile src={sources[0]} alt="" px={px} />
+          <Tile src={sources[0]} px={px} renderImage={renderImage} />
         )}
       </span>
     );

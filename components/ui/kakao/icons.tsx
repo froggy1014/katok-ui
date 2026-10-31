@@ -99,6 +99,13 @@ export const SmilePlusIcon = strokeIcon(
   "SmilePlusIcon",
   <path d="M22 11v1a10 10 0 1 1-9-10M8 14s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01M16 5h6M19 2v6" />
 );
+export const CameraIcon = strokeIcon(
+  "CameraIcon",
+  <>
+    <path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z" />
+    <circle cx="12" cy="13" r="3" />
+  </>
+);
 export const CopyIcon = strokeIcon(
   "CopyIcon",
   <>

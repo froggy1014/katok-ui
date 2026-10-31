@@ -7,7 +7,7 @@ import { ChatHeader } from "@/components/ui/kakao/chat-header";
 import { ChatRoom } from "@/components/ui/kakao/chat-room";
 import { DateSeparator } from "@/components/ui/kakao/date-separator";
 import { CopyIcon, PencilIcon, ReplyIcon, ShareIcon, TrashIcon } from "@/components/ui/kakao/icons";
-import { MessageActions } from "@/components/ui/kakao/message-actions";
+import { DEFAULT_QUICK_REACTIONS, MessageActions } from "@/components/ui/kakao/message-actions";
 import { MessageGroup } from "@/components/ui/kakao/message-group";
 import { MessageInput } from "@/components/ui/kakao/message-input";
 import { MessageReactions, type Reaction } from "@/components/ui/kakao/message-reactions";
@@ -27,15 +27,6 @@ type TextMessage = {
 };
 
 type Message = TextMessage | { id: number; kind: "alimtalk"; time: string };
-
-const QUICK_REACTIONS = [
-  { id: "heart", emoji: "❤️", label: "하트" },
-  { id: "like", emoji: "👍", label: "좋아요" },
-  { id: "check", emoji: "✅", label: "체크" },
-  { id: "laugh", emoji: "😆", label: "웃음" },
-  { id: "wow", emoji: "😮", label: "놀람" },
-  { id: "sad", emoji: "😢", label: "슬픔" },
-];
 
 const ICON = { size: 20, strokeWidth: 1.7 };
 const MENU = [
@@ -278,7 +269,7 @@ export function HeroChat() {
               </MessageGroup>
               {group.some((m) => m.id === pressedId) && (
                 <div className="kk-hero-pop -mt-[4px] flex justify-end">
-                  <MessageActions className="w-[260px]" reactions={QUICK_REACTIONS} actions={MENU} />
+                  <MessageActions className="w-[260px]" reactions={DEFAULT_QUICK_REACTIONS} actions={MENU} />
                 </div>
               )}
             </React.Fragment>
