@@ -41,6 +41,11 @@ Each component is independent — it brings the files it needs (tokens, icons, s
 | `message-actions` | Long-press menu: quick-reaction card + 복사 · 답장 · 공유 · … · 삭제 |
 | `bottom-sheet` | Sheet surface (44pt corners, grabber) and sheet search field |
 | `attachment-sheet` | "+" sheet: recent photos with camera tile and 전송, grouped attachment rows, promo banner |
+| `voice-recorder` | 음성메시지 sheet body: idle / recording bar, timer, record · stop · send |
+| `notice-banner` | Pinned 공지 card (`<ChatRoom notice>`) |
+| `capture-mode` | 캡처: glass header and toolbar, spotlight selection that dims the rest |
+| `action-sheet` | iOS 26 glass action sheet (송금하기 · 요청하기 · 1/N 정산하기 …) |
+| `location-picker` | 지도 → 이 위치 보내기 chrome over your own map |
 | `reaction-picker` | Reaction search + sectioned 6-column emoji grid |
 | `share-sheet` | Share bottom sheet: grabber, search, filter chips, picker rows, quick-share targets |
 | `chat-room` | Layout shell: header, message log, input, custom theme background |

@@ -7,6 +7,8 @@ import "@/components/ui/kakao/styles/kakao.css";
 interface ChatRoomProps extends React.HTMLAttributes<HTMLDivElement> {
   /** Usually a `<ChatHeader />`. */
   header?: React.ReactNode;
+  /** Pinned notice under the header, usually a `<NoticeBanner />`. Messages scroll beneath it. */
+  notice?: React.ReactNode;
   /** Usually a `<MessageInput />`. */
   input?: React.ReactNode;
   /** Override the chat background (color or image), e.g. a custom theme. */
@@ -29,7 +31,7 @@ const STICK_THRESHOLD = 48;
  * under its glass pills) and the input pill sits on the chat background.
  */
 const ChatRoom = React.forwardRef<HTMLDivElement, ChatRoomProps>(
-  ({ className, header, input, background, stickToBottom = true, children, style, ...props }, ref) => {
+  ({ className, header, notice, input, background, stickToBottom = true, children, style, ...props }, ref) => {
     const logRef = React.useRef<HTMLDivElement>(null);
     const contentRef = React.useRef<HTMLDivElement>(null);
     const pinned = React.useRef(true);
@@ -63,6 +65,16 @@ const ChatRoom = React.forwardRef<HTMLDivElement, ChatRoomProps>(
         {...props}
       >
         {header && <div className="absolute inset-x-0 top-0 z-10">{header}</div>}
+        {notice && (
+          <div
+            className={cn(
+              "absolute inset-x-[10px] z-10",
+              header ? "top-[calc(var(--kk-header-height)+2px)]" : "top-[8px]"
+            )}
+          >
+            {notice}
+          </div>
+        )}
         <div
           ref={logRef}
           role="log"

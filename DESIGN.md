@@ -100,6 +100,20 @@ Measured from an iOS 26 device screenshot (**S**). Icons in the stories are stan
 | Group divider | full-width `#DBDBDB` |
 | Banner | `--kk-sheet-fill`, 12pt radius, 16px bold title, `#5C5C5C` 15px link with chevron |
 
+### Chat-room sheets and modes
+Measured from iOS 26 device screenshots (**S**); dark values **C**.
+
+| Part | Value |
+|---|---|
+| 공지 (`notice-banner`) | near-white card (`rgba(255,255,255,.95)`), 16pt radius, 49pt tall, `#3290FC` megaphone, 10pt from the screen edges under the header |
+| Sheet title | centered, 18px bold |
+| 파일 rows | 48pt `#F5F5F5` tile, 17px label, gray chevron; `#E5E5E5` divider; empty text `#B8B8B8` |
+| 통화하기 | gray sheet (`#F5F5F5`), white 16pt-radius cards, 40pt `#E2F9EC` icon squircle with `#44CF7F` glyph |
+| 음성메시지 | 52pt bar, 18pt radius: `#EFEFEF` idle, `#FEE500` recording with dots and a bold timer; record dot `#F4551E`; yellow send circle |
+| 캡처 | outside the range dims by black 40% (`#AFC0CF` → `#68727B`); dashed white frame; glass header and toolbar |
+| Action sheet | glass card 319pt wide, 34pt radius, 15pt padding; 47pt pills 9pt apart at black 15% |
+| 지도 | white floating search (45pt, 12pt radius), 32pt chips, address card 20pt radius, `#376BE7` send button and locate glyph |
+
 ### Share sheet
 Measured from an iOS 26 device screenshot (**S**, 402pt wide @3x). Dark values are **C**.
 
@@ -107,6 +121,7 @@ Measured from an iOS 26 device screenshot (**S**, 402pt wide @3x). Dark values a
 |---|---|
 | `--kk-sheet-scrim` | `rgba(0,0,0,.5)` — `#ABC1D1` dims to `#576067` |
 | `--kk-radius-sheet` | `44px` top corners |
+| `.kk-glass` | shared Liquid Glass surface class (header pills, capture chrome) |
 | `--kk-sheet-grabber` | `#949494`, 36×5pt, 8pt from the top |
 | `--kk-sheet-fill` | `#F5F5F5` — search field (43pt, 8pt radius, 16pt gutter) and 52pt quick-share circles |
 | `--kk-sheet-placeholder` | `#888888`, 15px |

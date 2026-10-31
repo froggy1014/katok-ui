@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import { cn } from "@/lib/utils";
-import { ChevronLeftIcon, MenuIcon, SearchIcon } from "./icons";
+import { ChevronLeftIcon, MenuIcon, PhoneIcon, SearchIcon } from "./icons";
 import "@/components/ui/kakao/styles/kakao.css";
 
 interface ChatHeaderProps extends Omit<React.HTMLAttributes<HTMLElement>, "title"> {
@@ -21,12 +21,13 @@ interface ChatHeaderProps extends Omit<React.HTMLAttributes<HTMLElement>, "title
   onBack?: () => void;
   onSearch?: () => void;
   onMenu?: () => void;
+  /** Adds the phone button between search and menu (1:1 and group chats on device). */
+  onCall?: () => void;
   /** Replace the default trailing buttons. */
   actions?: React.ReactNode;
 }
 
-const GLASS =
-  "border border-kk-glass-border bg-kk-glass-bg shadow-[0_2px_12px_rgba(0,0,0,0.08)] backdrop-blur-xl backdrop-saturate-150";
+const GLASS = "kk-glass";
 
 function IconButton({
   label,
@@ -54,7 +55,20 @@ function IconButton({
 
 const ChatHeader = React.forwardRef<HTMLElement, ChatHeaderProps>(
   (
-    { className, variant = "chat", title, memberCount, subtitle, unreadTotal, onBack, onSearch, onMenu, actions, ...props },
+    {
+      className,
+      variant = "chat",
+      title,
+      memberCount,
+      subtitle,
+      unreadTotal,
+      onBack,
+      onSearch,
+      onMenu,
+      onCall,
+      actions,
+      ...props
+    },
     ref
   ) => {
     const trailing = actions ?? (
@@ -62,6 +76,11 @@ const ChatHeader = React.forwardRef<HTMLElement, ChatHeaderProps>(
         <IconButton label="검색" onClick={onSearch}>
           <SearchIcon size={23} strokeWidth={1.9} />
         </IconButton>
+        {onCall && (
+          <IconButton label="통화" onClick={onCall}>
+            <PhoneIcon size={22} strokeWidth={1.7} />
+          </IconButton>
+        )}
         <IconButton label="메뉴" onClick={onMenu}>
           <MenuIcon size={23} strokeWidth={1.9} />
         </IconButton>
