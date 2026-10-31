@@ -214,6 +214,11 @@
           "path": "components/ui/kakao/mention.tsx",
           "type": "registry:component",
           "target": "components/ui/kakao/mention.tsx"
+        },
+        {
+          "path": "components/ui/kakao/mention-popover.tsx",
+          "type": "registry:component",
+          "target": "components/ui/kakao/mention-popover.tsx"
         }
       ]
     },
