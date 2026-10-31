@@ -54,11 +54,11 @@ export const OverChatRoom: Story = {
     <div className="relative h-full">
       <ChatRoom header={<ChatHeader title={PEOPLE.seoyeon.name} />} input={<MessageInput />} stickToBottom={false}>
         <MessageGroup sender={PEOPLE.seoyeon} timestamp="오후 6:00">
-          <ChatBubble>우리 언제 만나?</ChatBubble>
+          <ChatBubble>회의 몇 시에 시작해요?</ChatBubble>
         </MessageGroup>
         <MessageGroup variant="outgoing" timestamp="오후 6:00">
-          <ChatBubble>23일 저녁 어때?</ChatBubble>
-          <ChatBubble pressed>판교역 4번 출구에서 만나!</ChatBubble>
+          <ChatBubble>3시요</ChatBubble>
+          <ChatBubble pressed>회의실은 7층 B로 잡았어요!</ChatBubble>
         </MessageGroup>
       </ChatRoom>
       {/* Floats over the log, 8pt under the pressed bubble. */}

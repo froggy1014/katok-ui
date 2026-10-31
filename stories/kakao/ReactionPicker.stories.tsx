@@ -19,9 +19,9 @@ type Story = StoryObj<typeof ReactionPicker>;
 export const OverChatRoom: Story = {
   render: (args) => (
     <div className="relative h-full">
-      <ChatRoom header={<ChatHeader title="일반채팅" memberCount={12} />}>
+      <ChatRoom header={<ChatHeader title="동기 모임" memberCount={8} />}>
         <MessageGroup sender={PEOPLE.minji} timestamp="오전 10:03">
-          <ChatBubble>서연아 생일 축하해</ChatBubble>
+          <ChatBubble>준호야 승진 축하해!</ChatBubble>
         </MessageGroup>
       </ChatRoom>
       <div className="absolute inset-0 bg-kk-sheet-scrim" />

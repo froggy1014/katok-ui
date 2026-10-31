@@ -103,12 +103,12 @@ export const FromPlusButton: Story = {
     return (
       <div className="relative h-full">
         <ChatRoom
-          header={<ChatHeader title="가족" memberCount={4} unreadTotal={51} />}
+          header={<ChatHeader title="보드게임 모임" memberCount={6} unreadTotal={7} />}
           input={<MessageInput onAttach={() => setOpen(true)} />}
         >
           <MessageGroup sender={PEOPLE.haeun} timestamp="오후 8:57">
-            <ChatBubble>ㅋㅋ</ChatBubble>
-            <ChatBubble>사진 좀 보내줘</ChatBubble>
+            <ChatBubble>단체 사진 잘 나왔어?</ChatBubble>
+            <ChatBubble>오늘 찍은 사진 올려줘</ChatBubble>
           </MessageGroup>
         </ChatRoom>
         {open && (

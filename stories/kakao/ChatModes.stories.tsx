@@ -23,12 +23,12 @@ type Story = StoryObj;
 const Before = () => (
   <>
     <MessageGroup sender={PEOPLE.haeun} timestamp="오후 8:31">
-      <ChatBubble>버스 자리 없어서</ChatBubble>
-      <ChatBubble>맨 뒤에 끼어서 탐</ChatBubble>
+      <ChatBubble>카페 자리 있대?</ChatBubble>
+      <ChatBubble>창가 쪽으로 예약했어</ChatBubble>
     </MessageGroup>
     <MessageGroup variant="outgoing" timestamp="오후 8:37">
-      <ChatBubble>여친이랑?</ChatBubble>
-      <ChatBubble>거기서 헤어짐?</ChatBubble>
+      <ChatBubble>몇 명으로?</ChatBubble>
+      <ChatBubble>여섯 명 맞지?</ChatBubble>
     </MessageGroup>
   </>
 );
@@ -36,12 +36,12 @@ const Before = () => (
 const Picked = () => (
   <>
     <MessageGroup sender={PEOPLE.haeun} timestamp="오후 8:57">
-      <ChatBubble>ㅋㅋ</ChatBubble>
-      <ChatBubble>ㄴ 안헤어짐 ㅅㄱ..</ChatBubble>
+      <ChatBubble>ㅇㅇ 여섯</ChatBubble>
+      <ChatBubble>한 명은 조금 늦는대</ChatBubble>
     </MessageGroup>
     <MessageGroup variant="outgoing" timestamp="오후 8:58">
-      <ChatBubble>아니</ChatBubble>
-      <ChatBubble>각자 집에 갔냐는 거였음</ChatBubble>
+      <ChatBubble>그럼 먼저 시작하자</ChatBubble>
+      <ChatBubble>규칙 설명은 내가 할게</ChatBubble>
     </MessageGroup>
   </>
 );
@@ -55,11 +55,11 @@ export const Capture: Story = {
         <Picked />
       </CaptureSelection>
       <MessageGroup sender={PEOPLE.haeun} timestamp="오후 9:12">
-        <ChatBubble>낼 아침에 갈 듯</ChatBubble>
+        <ChatBubble>좋아 그럼 3시에 봐</ChatBubble>
         <ChatBubble>ㅋㅋ</ChatBubble>
       </MessageGroup>
       <MessageGroup variant="outgoing" timestamp="오후 9:13">
-        <ChatBubble>ㅇㅋ 조심히 와</ChatBubble>
+        <ChatBubble>ㅇㅋ 이따 봐</ChatBubble>
       </MessageGroup>
     </ChatRoom>
   ),
@@ -73,11 +73,11 @@ export const CaptureToBottom: Story = {
       <CaptureSelection>
         <Picked />
         <MessageGroup sender={PEOPLE.haeun} timestamp="오후 9:12">
-          <ChatBubble>낼 아침에 갈 듯</ChatBubble>
+          <ChatBubble>좋아 그럼 3시에 봐</ChatBubble>
           <ChatBubble>ㅋㅋ</ChatBubble>
         </MessageGroup>
         <MessageGroup variant="outgoing" timestamp="오후 9:13">
-          <ChatBubble>ㅇㅋ 조심히 와</ChatBubble>
+          <ChatBubble>ㅇㅋ 이따 봐</ChatBubble>
         </MessageGroup>
       </CaptureSelection>
     </ChatRoom>
@@ -97,7 +97,7 @@ export const PayActionSheet: Story = {
   args: { onSelect: fn(), onCancel: fn() },
   render: (args) => (
     <div className="relative h-full">
-      <ChatRoom header={<ChatHeader title="가족" unreadTotal={51} onCall={() => {}} />} input={<MessageInput />}>
+      <ChatRoom header={<ChatHeader title="보드게임 모임" memberCount={6} unreadTotal={7} onCall={() => {}} />} input={<MessageInput />}>
         <Before />
         <Picked />
       </ChatRoom>

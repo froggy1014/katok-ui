@@ -42,7 +42,7 @@ export const UnderBubbles: Story = {
       <div className="flex flex-col gap-[12px]">
         <MessageGroup sender={PEOPLE.minji} timestamp="오전 10:03" unreadCount={12}>
           <ChatBubble reactions={<MessageReactions reactions={incoming} onToggle={toggleIn} onAdd={() => {}} />}>
-            서연아 생일 축하해
+            준호야 승진 축하해!
           </ChatBubble>
         </MessageGroup>
         <MessageGroup variant="outgoing" timestamp="오전 10:03" unreadCount={12}>
