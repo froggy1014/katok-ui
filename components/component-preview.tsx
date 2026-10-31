@@ -10,7 +10,12 @@ import { MessageGroup } from "@/components/ui/kakao/message-group";
 import { MessageInput } from "@/components/ui/kakao/message-input";
 import { ProfileAvatar } from "@/components/ui/kakao/profile-avatar";
 import { AttachmentGroup, AttachmentItem, AttachmentPhotos, AttachmentSheet } from "@/components/ui/kakao/attachment-sheet";
+import { ActionSheet } from "@/components/ui/kakao/action-sheet";
 import { BottomSheet, SheetSearch } from "@/components/ui/kakao/bottom-sheet";
+import { CaptureSelection } from "@/components/ui/kakao/capture-mode";
+import { LocationPicker } from "@/components/ui/kakao/location-picker";
+import { NoticeBanner } from "@/components/ui/kakao/notice-banner";
+import { VoiceRecorder } from "@/components/ui/kakao/voice-recorder";
 import { CameraIcon, CopyIcon, ReplyIcon, TrashIcon } from "@/components/ui/kakao/icons";
 import { DEFAULT_QUICK_REACTIONS, MessageActions } from "@/components/ui/kakao/message-actions";
 import { MessageReactions } from "@/components/ui/kakao/message-reactions";
@@ -124,6 +129,33 @@ const PREVIEWS: Record<string, () => React.ReactNode> = {
           <AttachmentItem icon={<CameraIcon size={22} className="text-[#3fb26a]" />} label="사진" />
         </AttachmentGroup>
       </AttachmentSheet>
+    </div>
+  ),
+  "voice-recorder": () => (
+    <div className="-mx-4 -mb-4 bg-kk-sheet-bg py-4">
+      <VoiceRecorder state="recording" elapsed={2} />
+    </div>
+  ),
+  "notice-banner": () => <NoticeBanner title="요나고 2박3일 · 7월 23–25" more />,
+  "capture-mode": () => (
+    <div className="-mx-4 -my-4 overflow-hidden px-4 py-6">
+      <CaptureSelection>
+        <MessageGroup variant="outgoing" timestamp="오후 8:58">
+          <ChatBubble>각자 집에 갔냐는 거였음</ChatBubble>
+        </MessageGroup>
+      </CaptureSelection>
+    </div>
+  ),
+  "action-sheet": () => (
+    <div className="-mx-4 -my-4 flex justify-center bg-black/25 py-4">
+      <ActionSheet className="w-[240px]" actions={[{ id: "send", label: "송금하기" }, { id: "split", label: "1/N 정산하기" }]} />
+    </div>
+  ),
+  "location-picker": () => (
+    <div className="-mx-4 -my-4 h-[300px]">
+      <LocationPicker address="서울 서초구 서초동 1739-1" distance="0m">
+        <div className="h-full bg-[url(/samples/map.svg)] bg-cover bg-center" />
+      </LocationPicker>
     </div>
   ),
   "share-sheet": () => (

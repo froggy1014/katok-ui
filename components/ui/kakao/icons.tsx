@@ -106,6 +106,46 @@ export const CameraIcon = strokeIcon(
     <circle cx="12" cy="13" r="3" />
   </>
 );
+export const PhoneIcon = strokeIcon(
+  "PhoneIcon",
+  <path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384" />
+);
+export const VideoIcon = strokeIcon(
+  "VideoIcon",
+  <>
+    <path d="m16 13 5.223 3.482a.5.5 0 0 0 .777-.416V7.87a.5.5 0 0 0-.752-.432L16 10.5" />
+    <rect x="2" y="6" width="14" height="12" rx="2" />
+  </>
+);
+export const FileIcon = strokeIcon(
+  "FileIcon",
+  <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7zM14 2v4a2 2 0 0 0 2 2h4" />
+);
+export const PictureIcon = strokeIcon(
+  "PictureIcon",
+  <>
+    <rect width="18" height="18" x="3" y="3" rx="3" />
+    <path d="m6 15 3.5-4 3 3 2-2L18 15" />
+  </>
+);
+/** Document on a scanner bed (original drawing). */
+export const ScanDocumentIcon = strokeIcon(
+  "ScanDocumentIcon",
+  <path d="M6 13V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8M9 7h6M9 10h6M3 13h18M5 13v6a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6" />
+);
+export const XIcon = strokeIcon("XIcon", <path d="M18 6 6 18M6 6l12 12" />);
+export const SlidersIcon = strokeIcon(
+  "SlidersIcon",
+  <path d="M21 7h-8M8 7H3M21 17h-5M11 17H3M10.5 4.5v5M15.5 14.5v5" />
+);
+export const CrosshairIcon = strokeIcon(
+  "CrosshairIcon",
+  <>
+    <circle cx="12" cy="12" r="8" />
+    <circle cx="12" cy="12" r="2.5" />
+    <path d="M12 2v3M12 19v3M2 12h3M19 12h3" />
+  </>
+);
 export const CopyIcon = strokeIcon(
   "CopyIcon",
   <>

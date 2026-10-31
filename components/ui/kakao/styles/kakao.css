@@ -106,6 +106,18 @@
   --color-kk-chip-fg: var(--kk-chip-fg);
   --color-kk-chip-selected: var(--kk-chip-selected);
   --color-kk-chip-selected-fg: var(--kk-chip-selected-fg);
+  --color-kk-notice-bg: var(--kk-notice-bg);
+  --color-kk-notice-icon: var(--kk-notice-icon);
+  --color-kk-sheet-divider: var(--kk-sheet-divider);
+  --color-kk-sheet-empty: var(--kk-sheet-empty);
+  --color-kk-call-tint: var(--kk-call-tint);
+  --color-kk-call-tint-bg: var(--kk-call-tint-bg);
+  --color-kk-voice-idle: var(--kk-voice-idle);
+  --color-kk-voice-record: var(--kk-voice-record);
+  --color-kk-capture-dim: var(--kk-capture-dim);
+  --color-kk-action-button: var(--kk-action-button);
+  --color-kk-action-card: var(--kk-action-card);
+  --color-kk-map-primary: var(--kk-map-primary);
   --color-kk-attach-camera: var(--kk-attach-camera);
   --color-kk-attach-send-disabled: var(--kk-attach-send-disabled);
   --color-kk-attach-send-disabled-fg: var(--kk-attach-send-disabled-fg);
@@ -230,6 +242,20 @@
   --kk-chip-fg: #191919; /* S */
   --kk-chip-selected: #191919; /* S */
   --kk-chip-selected-fg: #ffffff; /* S */
+
+  /* Chat-room surfaces — device screenshots (iOS 26) */
+  --kk-notice-bg: rgba(255, 255, 255, 0.95); /* S — reads #7F7F7F under the 50% scrim */
+  --kk-notice-icon: #3290fc; /* S */
+  --kk-sheet-divider: #e5e5e5; /* S */
+  --kk-sheet-empty: #b8b8b8; /* S */
+  --kk-call-tint: #44cf7f; /* S — 보이스톡 / 페이스톡 glyphs */
+  --kk-call-tint-bg: #e2f9ec; /* S */
+  --kk-voice-idle: #efefef; /* S */
+  --kk-voice-record: #f4551e; /* S */
+  --kk-capture-dim: rgba(0, 0, 0, 0.4); /* S — #AFC0CF dims to #68727B */
+  --kk-action-button: rgba(0, 0, 0, 0.15); /* S — #AEB5B8 on the #CDD3D8 glass card */
+  --kk-action-card: rgba(255, 255, 255, 0.72); /* C — glass; reads #CDD3D8 over the dimmed chat */
+  --kk-map-primary: #376be7; /* S */
 
   /* Attachment sheet ("+" in the input) — device screenshot */
   --kk-attach-camera: #949494; /* S */
@@ -356,6 +382,14 @@
   --kk-chip-fg: #ededed; /* C */
   --kk-chip-selected: #f2f2f2; /* C */
   --kk-chip-selected-fg: #191919; /* C */
+  --kk-notice-bg: rgba(44, 44, 46, 0.95); /* C */
+  --kk-sheet-divider: rgba(255, 255, 255, 0.1); /* C */
+  --kk-sheet-empty: #6d6d72; /* C */
+  --kk-call-tint-bg: rgba(68, 207, 127, 0.18); /* C */
+  --kk-voice-idle: #2c2c2e; /* C */
+  --kk-capture-dim: rgba(0, 0, 0, 0.55); /* C */
+  --kk-action-button: rgba(255, 255, 255, 0.14); /* C */
+  --kk-action-card: rgba(44, 44, 46, 0.72); /* C */
   --kk-attach-camera: #48484a; /* C */
   --kk-attach-send-disabled: #2c2c2e; /* C */
   --kk-attach-send-disabled-fg: #8e8e93; /* C */
@@ -374,6 +408,15 @@
   --kk-biz-badge: #4a4a4a; /* C */
 
   --kk-avatar-bg: #4a5b70;
+}
+
+/* iOS 26 Liquid Glass surface: floating header pills, capture chrome, action sheets. */
+.kk-glass {
+  border: 1px solid var(--kk-glass-border);
+  background: var(--kk-glass-bg);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(24px) saturate(1.5);
+  -webkit-backdrop-filter: blur(24px) saturate(1.5);
 }
 
 .font-kk {

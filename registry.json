@@ -81,7 +81,7 @@
       "name": "chat-header",
       "type": "registry:component",
       "title": "Chat Header",
-      "description": "Chat room header (back + unread total, title, member count, search, menu) and large-title tab header.",
+      "description": "Chat room header (back + unread total, title, member count, search, menu) and large-title tab header; optional phone button (`onCall`).",
       "registryDependencies": [
         "utils",
         "https://katok-ui.jeongmin.dev/r/kakao-core.json"
@@ -167,7 +167,7 @@
       "name": "bottom-sheet",
       "type": "registry:component",
       "title": "Bottom Sheet",
-      "description": "Sheet surface with 44pt top corners and a grabber, plus the gray sheet search field.",
+      "description": "Sheet surface (44pt corners, grabber, white or gray tone) with sheet search, centered title, and tile / card rows (파일, 통화하기).",
       "registryDependencies": [
         "utils",
         "https://katok-ui.jeongmin.dev/r/kakao-core.json"
@@ -270,10 +270,95 @@
       ]
     },
     {
+      "name": "notice-banner",
+      "type": "registry:component",
+      "title": "Notice Banner",
+      "description": "Pinned 공지 card under the chat header: megaphone, one-line notice, \"…\" for more, close. Slots into `<ChatRoom notice>`.",
+      "registryDependencies": [
+        "utils",
+        "https://katok-ui.jeongmin.dev/r/kakao-core.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/kakao/notice-banner.tsx",
+          "type": "registry:component",
+          "target": "components/ui/kakao/notice-banner.tsx"
+        }
+      ]
+    },
+    {
+      "name": "voice-recorder",
+      "type": "registry:component",
+      "title": "Voice Recorder",
+      "description": "음성메시지 sheet body: gray idle bar, yellow level bar and timer while recording, record / stop / send controls.",
+      "registryDependencies": [
+        "utils",
+        "https://katok-ui.jeongmin.dev/r/kakao-core.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/kakao/voice-recorder.tsx",
+          "type": "registry:component",
+          "target": "components/ui/kakao/voice-recorder.tsx"
+        }
+      ]
+    },
+    {
+      "name": "capture-mode",
+      "type": "registry:component",
+      "title": "Capture Mode",
+      "description": "캡처 mode: glass header (닫기, 선택 해제), a spotlight selection that dims the rest of the chat, and a glass toolbar (옵션, 저장, 공유).",
+      "registryDependencies": [
+        "utils",
+        "https://katok-ui.jeongmin.dev/r/kakao-core.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/kakao/capture-mode.tsx",
+          "type": "registry:component",
+          "target": "components/ui/kakao/capture-mode.tsx"
+        }
+      ]
+    },
+    {
+      "name": "action-sheet",
+      "type": "registry:component",
+      "title": "Action Sheet",
+      "description": "iOS 26 glass action sheet with stacked pill buttons and 취소 (송금하기 · 요청하기 · 1/N 정산하기 …).",
+      "registryDependencies": [
+        "utils",
+        "https://katok-ui.jeongmin.dev/r/kakao-core.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/kakao/action-sheet.tsx",
+          "type": "registry:component",
+          "target": "components/ui/kakao/action-sheet.tsx"
+        }
+      ]
+    },
+    {
+      "name": "location-picker",
+      "type": "registry:component",
+      "title": "Location Picker",
+      "description": "지도 → 이 위치 보내기: header, floating search, category chips, locate button and address card over your own map.",
+      "registryDependencies": [
+        "utils",
+        "https://katok-ui.jeongmin.dev/r/kakao-core.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/kakao/location-picker.tsx",
+          "type": "registry:component",
+          "target": "components/ui/kakao/location-picker.tsx"
+        }
+      ]
+    },
+    {
       "name": "chat-room",
       "type": "registry:component",
       "title": "Chat Room",
-      "description": "Layout shell: header, scrollable message log on the chat background, input bar.",
+      "description": "Layout shell: header, scrollable message log on the chat background, input bar; `notice` slot for a pinned 공지.",
       "registryDependencies": [
         "utils",
         "https://katok-ui.jeongmin.dev/r/kakao-core.json"
