@@ -119,6 +119,10 @@
   --color-kk-action-button: var(--kk-action-button);
   --color-kk-action-card: var(--kk-action-card);
   --color-kk-map-primary: var(--kk-map-primary);
+  --color-kk-call-bg: var(--kk-call-bg);
+  --color-kk-call-surface: var(--kk-call-surface);
+  --color-kk-call-end: var(--kk-call-end);
+  --color-kk-transcript-them: var(--kk-transcript-them);
   --color-kk-promo-bg: var(--kk-promo-bg);
   --color-kk-promo-title: var(--kk-promo-title);
   --color-kk-promo-fg: var(--kk-promo-fg);
@@ -267,6 +271,12 @@
   --kk-action-card: rgba(255, 255, 255, 0.72); /* C — glass; reads #CDD3D8 over the dimmed chat */
   --kk-map-primary: #376be7; /* S */
 
+  /* 보이스톡 — kakaocorp.com service screenshots (same in dark mode) */
+  --kk-call-bg: #080808; /* S */
+  --kk-call-surface: #262626; /* S */
+  --kk-call-end: #f4551e; /* S */
+  --kk-transcript-them: #f0f0f0; /* S */
+
   /* Tabs — kakaocorp.com service screenshots */
   --kk-promo-bg: #f3f3f3; /* S — chats / friends tab banner (the "+" sheet one reads #F5F5F5) */
   --kk-promo-title: #333333; /* S */
@@ -411,6 +421,7 @@
   --kk-capture-dim: rgba(0, 0, 0, 0.55); /* C */
   --kk-action-button: rgba(255, 255, 255, 0.14); /* C */
   --kk-action-card: rgba(44, 44, 46, 0.72); /* C */
+  --kk-transcript-them: #2c2c2e; /* C */
   --kk-promo-bg: #2c2c2e; /* C */
   --kk-promo-title: #ededed; /* C */
   --kk-promo-fg: #a1a1a6; /* C */

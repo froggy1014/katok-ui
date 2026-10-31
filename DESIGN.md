@@ -112,6 +112,16 @@ From kakaocorp.com service screenshots (**S**, 842px = 402pt).
 | Updated friends | 54pt squircles 70pt apart, `#F4551E` new dot, white "AD" tag |
 | Friend rows | 46pt avatar, 17px name, 14px gray line; 선물하기 pill 36pt with `#E4E4E4` border |
 
+### Profile, feed and calls
+From kakaocorp.com service screenshots (**S**); layout values are approximations (**C**) where noted in code.
+
+| Part | Value |
+|---|---|
+| 보이스톡 | `#080808` screen, `#262626` card and controls, `#F4551E` hang-up, yellow ringing dots |
+| Recording transcript | their lines `#F0F0F0`, yours `#FEE500`, playing line white with a dark ring; 56pt black play button, ±5s |
+| Profile | background hero, 64pt avatar with a light ring, 28px bold name, glass action bar, 3-column grid |
+| 지금 tab | white segment chip on the clip, glass for the other; counts under the right-hand icons |
+
 ### Rich messages
 From kakaocorp.com screenshots (**S**).
 

@@ -38,6 +38,10 @@ const CATEGORY_ORDER = [
     ],
   },
   { label: "Tabs & Lists", names: ["tab-bar", "filter-chips", "promo-banner", "friend-list"] },
+  {
+    label: "Profile, Feed & Calls",
+    names: ["profile-view", "feed-post", "call-screen", "call-transcript", "shortform-view", "community-post"],
+  },
   { label: "Biz Message", names: ["alimtalk-bubble", "brand-message-bubble", "biz-button"] },
 ];
 

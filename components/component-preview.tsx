@@ -12,6 +12,12 @@ import { ProfileAvatar } from "@/components/ui/kakao/profile-avatar";
 import { AttachmentGroup, AttachmentItem, AttachmentPhotos, AttachmentSheet } from "@/components/ui/kakao/attachment-sheet";
 import { ActionSheet } from "@/components/ui/kakao/action-sheet";
 import { BottomSheet, SheetSearch } from "@/components/ui/kakao/bottom-sheet";
+import { CallScreen } from "@/components/ui/kakao/call-screen";
+import { CallTranscript } from "@/components/ui/kakao/call-transcript";
+import { CommunityPost } from "@/components/ui/kakao/community-post";
+import { FeedPost } from "@/components/ui/kakao/feed-post";
+import { ProfileView } from "@/components/ui/kakao/profile-view";
+import { ShortformView } from "@/components/ui/kakao/shortform-view";
 import { FilterChips } from "@/components/ui/kakao/filter-chips";
 import { FriendListItem, RowButton, UpdatedFriends } from "@/components/ui/kakao/friend-list";
 import { PromoBanner } from "@/components/ui/kakao/promo-banner";
@@ -234,6 +240,58 @@ const PREVIEWS: Record<string, () => React.ReactNode> = {
         ]}
       />
       <FriendListItem name="최도현" avatar={S("avatar-dohyun")} description="오늘" badge="🎂" action={<RowButton>선물하기</RowButton>} />
+    </div>
+  ),
+  "profile-view": () => (
+    <div className="-mx-4 -my-4 h-[300px]">
+      <ProfileView background="/samples/photo-portrait.jpg" name="김민지" avatar={MINJI.avatar} status="바다 보러 가는 중" />
+    </div>
+  ),
+  "feed-post": () => (
+    <div className="-mx-4 -my-4 h-[300px] overflow-hidden bg-kk-list-bg">
+      <FeedPost author={{ name: "이준호", avatar: S("avatar-junho") }} meta="1시간 전 · 프로필 업데이트" image="/samples/photo-landscape.jpg" />
+    </div>
+  ),
+  "call-screen": () => (
+    <div className="-mx-4 -my-4 h-[300px]">
+      <CallScreen name="박서연" avatar={S("avatar-seoyeon")} recordLabel="" />
+    </div>
+  ),
+  "call-transcript": () => (
+    <div className="-mx-4 -my-4 h-[300px]">
+      <CallTranscript
+        name="박서연"
+        avatar={S("avatar-seoyeon")}
+        summaryLabel=""
+        lines={[
+          { id: "1", from: "them", text: "여보세요", time: "00:01" },
+          { id: "2", from: "me", text: "응 지금 통화 괜찮아?", time: "00:02" },
+        ]}
+        activeId="2"
+        duration={180}
+        position={2}
+      />
+    </div>
+  ),
+  "shortform-view": () => (
+    <div className="-mx-4 -my-4 h-[300px]">
+      <ShortformView channel={{ name: "강변 산책 기록", verified: true }} title="노을 질 때 날린 연" views="조회수 3.2만" progress={0.3}>
+        <div className="h-full bg-[url(/samples/poster-kite.jpg)] bg-cover bg-center" />
+      </ShortformView>
+    </div>
+  ),
+  "community-post": () => (
+    <div className="-mx-4 -my-4 bg-kk-list-bg">
+      <CommunityPost
+        title="오늘 우리 동네 날씨는?"
+        author="동네 기상캐스터"
+        avatar={S("avatar-seoyeon")}
+        time="30분 전"
+        tag={{ label: "일상", tone: "blue" }}
+        body="아침엔 쌀쌀했는데 점심엔 반팔이에요."
+        reactions={{ emoji: ["👍", "😮"], count: 12 }}
+        comments={16}
+      />
     </div>
   ),
   "share-sheet": () => (
