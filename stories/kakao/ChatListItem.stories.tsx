@@ -1,4 +1,6 @@
+import * as React from "react";
 import type { Meta, StoryObj } from "@storybook/nextjs-vite";
+import { expect, userEvent, within } from "storybook/test";
 import { ChatListItem } from "@/components/ui/kakao/chat-list-item";
 import { CHANNELS, PEOPLE } from "./fixtures";
 
@@ -53,6 +55,41 @@ export const Channel: Story = {
     lastMessage: "[미리마켓] 주문하신 상품이 출발했어요.",
     timestamp: "오전 9:12",
     unreadCount: 1,
+  },
+};
+
+export const OpenChat: Story = {
+  args: { openChat: true, name: "주말 러닝 크루", memberCount: 81, avatar: undefined, lastMessage: "리얼 짱춥", unreadCount: 0 },
+};
+
+/** `selected` turns the row into a checkbox for share / invite pickers. */
+export const Picker: Story = {
+  render: function Render() {
+    const [picked, setPicked] = React.useState<string[]>(["mom"]);
+    const toggle = (id: string) => setPicked((p) => (p.includes(id) ? p.filter((x) => x !== id) : [...p, id]));
+    return (
+      <div className="-mx-6 flex flex-col">
+        <ChatListItem name="엄마" avatar={PEOPLE.haeun.avatar} pinned lastMessage="밥은 먹었어?" selected={picked.includes("mom")} onClick={() => toggle("mom")} />
+        <ChatListItem
+          name="주말 러닝 크루"
+          openChat
+          memberCount={81}
+          muted
+          lastMessage="리얼 짱춥"
+          selected={picked.includes("run")}
+          onClick={() => toggle("run")}
+        />
+        <ChatListItem name={PEOPLE.minji.name} avatar={PEOPLE.minji.avatar} lastMessage="ㅋㅋㅋㅋ 내일 봐" selected={picked.includes("minji")} onClick={() => toggle("minji")} />
+      </div>
+    );
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const minji = canvas.getByRole("checkbox", { name: /김민지/ });
+    await expect(minji).toHaveAttribute("aria-checked", "false");
+    minji.focus();
+    await userEvent.keyboard(" ");
+    await expect(minji).toHaveAttribute("aria-checked", "true");
   },
 };
 

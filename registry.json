@@ -189,11 +189,47 @@
       "name": "chat-list-item",
       "type": "registry:component",
       "title": "Chat List Item",
-      "description": "Chats tab row: squircle or group composite avatar, member count, 2-line preview, time, red unread badge, mute and pin.",
+      "description": "Chats tab row: squircle or group composite avatar, member count, open chat mark, 2-line preview, time, red unread badge, mute and pin; `selected` turns it into a picker row with a round check.",
       "registryDependencies": [
         "utils"
       ],
       "files": [
+        {
+          "path": "components/ui/kakao/chat-list-item.tsx",
+          "type": "registry:component",
+          "target": "components/ui/kakao/chat-list-item.tsx"
+        },
+        {
+          "path": "components/ui/kakao/profile-avatar.tsx",
+          "type": "registry:component",
+          "target": "components/ui/kakao/profile-avatar.tsx"
+        },
+        {
+          "path": "components/ui/kakao/icons.tsx",
+          "type": "registry:component",
+          "target": "components/ui/kakao/icons.tsx"
+        },
+        {
+          "path": "components/ui/kakao/styles/kakao.css",
+          "type": "registry:file",
+          "target": "components/ui/kakao/styles/kakao.css"
+        }
+      ]
+    },
+    {
+      "name": "share-sheet",
+      "type": "registry:component",
+      "title": "Share Sheet",
+      "description": "Bottom sheet for sharing into a chat: grabber, search field, filter chips, picker rows and a quick-share row.",
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "components/ui/kakao/share-sheet.tsx",
+          "type": "registry:component",
+          "target": "components/ui/kakao/share-sheet.tsx"
+        },
         {
           "path": "components/ui/kakao/chat-list-item.tsx",
           "type": "registry:component",
