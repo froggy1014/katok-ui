@@ -9,6 +9,11 @@ import { DateSeparator } from "@/components/ui/kakao/date-separator";
 import { MessageGroup } from "@/components/ui/kakao/message-group";
 import { MessageInput } from "@/components/ui/kakao/message-input";
 import { ProfileAvatar } from "@/components/ui/kakao/profile-avatar";
+import { BottomSheet, SheetSearch } from "@/components/ui/kakao/bottom-sheet";
+import { CopyIcon, ReplyIcon, TrashIcon } from "@/components/ui/kakao/icons";
+import { MessageActions } from "@/components/ui/kakao/message-actions";
+import { MessageReactions } from "@/components/ui/kakao/message-reactions";
+import { ReactionPicker } from "@/components/ui/kakao/reaction-picker";
 import { ShareSheet } from "@/components/ui/kakao/share-sheet";
 import { SystemMessage } from "@/components/ui/kakao/system-message";
 
@@ -53,6 +58,55 @@ const PREVIEWS: Record<string, () => React.ReactNode> = {
   "chat-list-item": () => (
     <div className="-mx-4">
       <ChatListItem name="김민지" avatar={MINJI.avatar} lastMessage="내일 몇 시에 볼까?" timestamp="오후 2:14" unreadCount={2} />
+    </div>
+  ),
+  "bottom-sheet": () => (
+    <div className="-mx-4 -mb-4 h-[140px] bg-kk-sheet-scrim pt-4">
+      <BottomSheet className="h-full">
+        <SheetSearch placeholder="검색" />
+      </BottomSheet>
+    </div>
+  ),
+  "message-reactions": () => (
+    <MessageGroup sender={MINJI} timestamp="오전 10:03">
+      <ChatBubble
+        reactions={
+          <MessageReactions
+            reactions={[
+              { id: "heart", emoji: "❤️", label: "하트", count: 4 },
+              { id: "party", emoji: "🥳", label: "축하", count: 9, selected: true },
+            ]}
+          />
+        }
+      >
+        생일 축하해
+      </ChatBubble>
+    </MessageGroup>
+  ),
+  "reaction-picker": () => (
+    <div className="-mx-4 -mb-4 h-[220px] bg-kk-sheet-scrim pt-4">
+      <ReactionPicker
+        className="h-full"
+        sections={[
+          {
+            label: "기본",
+            reactions: ["❤️", "👍", "✅", "😆", "😮", "😢"].map((e, i) => ({ id: String(i), emoji: e, label: e })),
+          },
+        ]}
+      />
+    </div>
+  ),
+  "message-actions": () => (
+    <div className="flex justify-end">
+      <MessageActions
+        className="w-[240px]"
+        reactions={["❤️", "👍", "✅", "😆", "😮", "😢"].map((e, i) => ({ id: String(i), emoji: e, label: e }))}
+        actions={[
+          { id: "copy", label: "복사", icon: <CopyIcon size={20} strokeWidth={1.7} /> },
+          { id: "reply", label: "답장", icon: <ReplyIcon size={20} strokeWidth={1.7} /> },
+          { id: "delete", label: "삭제", icon: <TrashIcon size={20} strokeWidth={1.7} />, destructive: true },
+        ]}
+      />
     </div>
   ),
   "share-sheet": () => (

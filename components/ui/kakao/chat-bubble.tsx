@@ -9,7 +9,10 @@ interface BubbleMetaProps {
   timestamp?: string;
   /** Members who haven't read the message yet — KakaoTalk's yellow "1". */
   unreadCount?: number;
-  /** Shows "수정됨" for messages edited within 24h (KakaoTalk 25.8+). */
+  /**
+   * Shows "수정됨" for messages edited within 24h (KakaoTalk 25.8+).
+   * `ChatBubble` draws it inside the bubble; here it falls back to the meta line.
+   */
   edited?: boolean;
 }
 
@@ -102,21 +105,30 @@ BubbleRow.displayName = "BubbleRow";
 interface ChatBubbleProps extends BubbleRowProps {
   /** Extra classes for the bubble surface (the row gets `className`). */
   bubbleClassName?: string;
+  /** Darkened, as while the long-press menu is open. */
+  pressed?: boolean;
+  /** Shown under the bubble, usually `<MessageReactions>`. */
+  reactions?: React.ReactNode;
 }
 
 const ChatBubble = React.forwardRef<HTMLDivElement, ChatBubbleProps>(
-  ({ variant = "incoming", showTail = false, bubbleClassName, children, ...props }, ref) => {
+  (
+    { variant = "incoming", showTail = false, edited, pressed, reactions, bubbleClassName, children, ...props },
+    ref
+  ) => {
     const isOutgoing = variant === "outgoing";
-    return (
-      <BubbleRow ref={ref} variant={variant} showTail={showTail} {...props}>
+    const row = (
+      <BubbleRow ref={reactions ? undefined : ref} variant={variant} showTail={showTail} {...props}>
         <div
+          data-pressed={pressed || undefined}
           className={cn(
             "relative min-w-[36px] max-w-[var(--kk-msg-max-width)] whitespace-pre-wrap break-words break-keep px-[11px] py-[7px]",
             "text-[length:var(--kk-text-message)] leading-[var(--kk-leading-message)] tracking-[-0.01em]",
-            "rounded-[var(--kk-radius-bubble)]",
+            "rounded-[var(--kk-radius-bubble)] transition-[filter] duration-150",
             isOutgoing
               ? "bg-kk-bubble-outgoing text-kk-bubble-outgoing-fg"
               : "bg-kk-bubble-incoming text-kk-bubble-incoming-fg",
+            pressed && "[filter:var(--kk-bubble-pressed)]",
             bubbleClassName
           )}
         >
@@ -128,8 +140,27 @@ const ChatBubble = React.forwardRef<HTMLDivElement, ChatBubbleProps>(
           )}
           {/* positioned so text paints above the tail */}
           <span className="relative">{children}</span>
+          {/* Device: small label on its own line, inside the bubble's bottom-right. */}
+          {edited && (
+            <span
+              className={cn(
+                "relative -mt-[1px] block text-right text-[12px] leading-[16px] tracking-normal",
+                isOutgoing ? "text-kk-bubble-outgoing-edited" : "text-kk-bubble-incoming-edited"
+              )}
+            >
+              수정됨
+            </span>
+          )}
         </div>
       </BubbleRow>
+    );
+
+    if (!reactions) return row;
+    return (
+      <div ref={ref} className={cn("flex w-full flex-col gap-[8px]", isOutgoing ? "items-end" : "items-start")}>
+        {row}
+        {reactions}
+      </div>
     );
   }
 );

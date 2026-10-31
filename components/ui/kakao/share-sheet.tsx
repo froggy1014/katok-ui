@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import { cn } from "@/lib/utils";
-import { SearchIcon } from "./icons";
+import { BottomSheet, SheetSearch } from "./bottom-sheet";
 import "@/components/ui/kakao/styles/kakao.css";
 
 interface ShareSheetFilter {
@@ -30,9 +30,8 @@ interface ShareSheetProps extends React.HTMLAttributes<HTMLDivElement> {
 
 /**
  * The bottom sheet KakaoTalk opens to share into a chat: grabber, search,
- * filter chips, a picker list and a quick-share row. Presentational only —
- * put it inside your own drawer/dialog for the slide-up, scrim and focus trap
- * (`bg-kk-sheet-scrim` matches the device dim).
+ * filter chips, a picker list and a quick-share row. Built on `BottomSheet`,
+ * so it is presentational too — bring your own drawer for the slide-up.
  */
 const ShareSheet = React.forwardRef<HTMLDivElement, ShareSheetProps>(
   (
@@ -52,36 +51,17 @@ const ShareSheet = React.forwardRef<HTMLDivElement, ShareSheetProps>(
     },
     ref
   ) => {
-    const [innerQuery, setInnerQuery] = React.useState(defaultQuery);
-    const text = query !== undefined ? query : innerQuery;
     const [innerFilter, setInnerFilter] = React.useState(defaultFilter ?? filters?.[0]?.value);
     const active = filter !== undefined ? filter : innerFilter;
 
     return (
-      <div
-        ref={ref}
-        className={cn(
-          "font-kk flex max-h-full flex-col overflow-hidden rounded-t-[var(--kk-radius-sheet)] bg-kk-sheet-bg pb-[calc(12px+env(safe-area-inset-bottom))] text-kk-text-primary",
-          className
-        )}
-        {...props}
-      >
-        <div aria-hidden="true" className="mx-auto mt-[8px] h-[5px] w-[36px] shrink-0 rounded-full bg-kk-sheet-grabber" />
-
-        <label className="mx-[16px] mt-[10px] flex h-[43px] shrink-0 items-center gap-[10px] rounded-[8px] bg-kk-sheet-fill px-[12px]">
-          <SearchIcon size={20} strokeWidth={2.2} className="shrink-0 text-kk-text-primary" />
-          <input
-            type="search"
-            value={text}
-            onChange={(e) => {
-              if (query === undefined) setInnerQuery(e.target.value);
-              onQueryChange?.(e.target.value);
-            }}
-            placeholder={searchPlaceholder}
-            aria-label={searchPlaceholder}
-            className="min-w-0 flex-1 bg-transparent text-[15px] text-kk-text-primary outline-none placeholder:text-kk-sheet-placeholder [&::-webkit-search-cancel-button]:hidden"
-          />
-        </label>
+      <BottomSheet ref={ref} className={className} {...props}>
+        <SheetSearch
+          value={query}
+          defaultValue={defaultQuery}
+          onValueChange={onQueryChange}
+          placeholder={searchPlaceholder}
+        />
 
         {filters && filters.length > 0 && (
           <div role="group" aria-label="필터" className="mt-[16px] flex shrink-0 gap-[7px] overflow-x-auto px-[16px]">
@@ -114,7 +94,7 @@ const ShareSheet = React.forwardRef<HTMLDivElement, ShareSheetProps>(
         {targets && (
           <div className="flex shrink-0 overflow-x-auto border-t border-kk-divider px-[9px] pt-[16px]">{targets}</div>
         )}
-      </div>
+      </BottomSheet>
     );
   }
 );
